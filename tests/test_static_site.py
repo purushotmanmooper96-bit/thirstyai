@@ -23,3 +23,12 @@ class StaticSite(unittest.TestCase):
   lab=(ROOT/'dist/lab.mjs').read_text(encoding='utf-8')
   self.assertIn('ILLUSTRATIVE INPUTS — NOT MEASUREMENTS',lab)
   self.assertIn('scenario_warning',json.loads((ROOT/'dist/data/evidence.json').read_text(encoding='utf-8')))
+
+ def test_generated_release_metadata_is_idempotent(self):
+  import sys
+  sys.path.insert(0,str(ROOT/'scripts'))
+  from build import stamp_html
+  before='OPEN RESEARCH · v0.2.1.1 <span class="pill">v0.2</span> Sources checked 22 Oct 2026 <b>x</b>'
+  once=stamp_html(before,'2026-10-22')
+  self.assertEqual(once,stamp_html(once,'2026-10-22'))
+  self.assertNotIn('v0.2.1.1',once)

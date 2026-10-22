@@ -1,11 +1,17 @@
 """Build distributable evidence JSON, exports, SQL fixture and conditional scenarios."""
 from pathlib import Path
-import sys,json,csv,hashlib,shutil
+import sys,json,csv,hashlib,shutil,re
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from thirstyai import __version__
 from thirstyai.model import Inputs,calculate,project
 from static_content import insert,WARNING
 from validate_evidence import validate_registry,validate_facts
+
+def stamp_html(html,reviewed):
+ html=re.sub(r'OPEN RESEARCH · v[0-9.]+','OPEN RESEARCH · v'+__version__,html)
+ html=re.sub(r'(<span class="pill">)v[0-9.]+',r'\g<1>v'+__version__,html)
+ html=re.sub(r'Sources (?:checked|captured) [^<]+','Sources captured '+reviewed+' ',html)
+ return html
 
 def main():
  with (ROOT/'data/processed/india_groundwater_2025.csv').open(encoding='utf-8') as f:india=list(csv.DictReader(f))
@@ -46,7 +52,7 @@ def main():
  manifest={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'research').rglob('*.json'))}
  (ROOT/'outputs/build_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n', encoding='utf-8')
  index=ROOT/'dist/index.html';html=insert(index.read_text(encoding='utf-8'),output)
- html=html.replace('OPEN RESEARCH · v0.2','OPEN RESEARCH · v'+__version__).replace('<span class="pill">v0.2</span>','<span class="pill">v'+__version__+'</span>')
+ html=stamp_html(html,output['reviewed'])
  index.write_text(html,encoding='utf-8')
  # GitHub Pages serves docs/ directly; keep exactly one content URL.
  for item in (ROOT/'dist').iterdir():

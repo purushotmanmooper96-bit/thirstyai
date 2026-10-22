@@ -50,7 +50,7 @@ const state = {
   efficiency: 5,
 };
 const fmt = (n, d = 0) =>
-  new Intl.NumberFormat("en-IN", {
+  new Intl.NumberFormat("en", {
     maximumFractionDigits: d,
     minimumFractionDigits: d,
   }).format(n);
