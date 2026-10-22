@@ -1,10 +1,11 @@
+from contextlib import closing
 """Build the runnable SQLite audit database; also export PostgreSQL-compatible source inserts."""
 from pathlib import Path
 import sqlite3,json,csv
 ROOT=Path(__file__).resolve().parents[1]
 def main():
  db=ROOT/'outputs/thirstyai.sqlite'
- with sqlite3.connect(db) as conn:
+ with closing(sqlite3.connect(db)) as conn, conn:
   conn.execute('PRAGMA foreign_keys=ON')
   conn.executescript((ROOT/'sql/schema.sql').read_text(encoding='utf-8'))
   conn.execute('DELETE FROM company_water_reports');conn.execute('DELETE FROM groundwater');conn.execute('DELETE FROM sources');conn.execute('DELETE FROM scenario_inputs')

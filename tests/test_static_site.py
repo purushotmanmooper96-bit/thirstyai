@@ -18,7 +18,8 @@ class StaticSite(unittest.TestCase):
   self.assertIn('location.search+location.hash',legacy)
   self.assertEqual(len(list((ROOT/'docs/site').iterdir())),1)
  def test_scenario_export_warnings(self):
-  rows=list(csv.DictReader((ROOT/'outputs/scenarios.csv').open()))
+  with (ROOT/'outputs/scenarios.csv').open(encoding='utf-8',newline='') as stream:
+   rows=list(csv.DictReader(stream))
   self.assertTrue(all(r['warning']=='ILLUSTRATIVE INPUTS - NOT MEASUREMENTS' for r in rows))
   lab=(ROOT/'dist/lab.mjs').read_text(encoding='utf-8')
   self.assertIn('ILLUSTRATIVE INPUTS — NOT MEASUREMENTS',lab)
