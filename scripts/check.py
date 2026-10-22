@@ -22,7 +22,7 @@ def main():
  for x,y in zip(inputs,json.loads(process.stdout)):
   for key in ['total_l','direct_l','indirect_l','facility_mwh','carbon_kg']:
    assert abs(calculate(x)[key]-y[key])<1e-6
- doc=json.loads((ROOT/'dist/data/evidence.json').read_text())
+ doc=json.loads((ROOT/'dist/data/evidence.json').read_text(encoding='utf-8'))
  assert len(doc['india'])==36 and doc['coverage']['global_water_total'] is None
  assert all(c['source_id'] in {s['id'] for s in doc['sources']} for c in doc['claims'])
  print('Integration passed: SQLite integrity + semantic guard; SQL/Python parity; 30 Python/JS parity cases; evidence coverage.')

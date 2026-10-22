@@ -20,7 +20,7 @@ def main():
  except ImportError:raise SystemExit('Install optional driver: python -m pip install "psycopg[binary]>=3.2,<4"')
  with sqlite3.connect(ROOT/'outputs/thirstyai.sqlite') as local,psycopg.connect(connect_timeout=15) as pg:
   if args.load:
-   pg.execute((ROOT/'sql/postgresql_schema.sql').read_text())
+   pg.execute((ROOT/'sql/postgresql_schema.sql').read_text(encoding='utf-8'))
    for table in reversed(TABLES):pg.execute('DELETE FROM '+table)
    for table in TABLES:
     rows=local.execute('SELECT * FROM '+table).fetchall()

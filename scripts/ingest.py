@@ -82,8 +82,8 @@ def main():
         except Exception as exc:
             provenance.append({'source_id':source['id'],'status':'fetch_failed','error':str(exc)})
             print(source['id'],'fetch_failed',str(exc))
-    (ROOT/'research/provenance.json').write_text(json.dumps(provenance,indent=2)+'\n')
-    (ROOT/'research/sources.json').write_text(json.dumps(active_sources,indent=2)+'\n')
+    (ROOT/'research/provenance.json').write_text(json.dumps(provenance,indent=2)+'\n', encoding='utf-8')
+    (ROOT/'research/sources.json').write_text(json.dumps(active_sources,indent=2)+'\n', encoding='utf-8')
     if 'CGWB25' in texts:
         rows=extract_india(texts['CGWB25']); dest=ROOT/'data/processed/india_groundwater_2025.csv'
         with dest.open('w',newline='',encoding='utf-8') as f:

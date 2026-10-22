@@ -48,8 +48,8 @@ class EvidenceTests(unittest.TestCase):
   self.assertEqual(float(row['extraction_bcm']),0);self.assertEqual(float(row['stage_pct']),57.79)
  def test_claim_lineage(self):
   root=Path(__file__).resolve().parents[1]
-  sources={s['id'] for s in json.loads((root/'research/sources.json').read_text())}
-  claims=json.loads((root/'research/claims.json').read_text())
+  sources={s['id'] for s in json.loads((root/'research/sources.json').read_text(encoding='utf-8'))}
+  claims=json.loads((root/'research/claims.json').read_text(encoding='utf-8'))
   self.assertTrue(all(c['source_id'] in sources and c['locator'] and c['caveat'] for c in claims))
 
 if __name__=='__main__':unittest.main()
