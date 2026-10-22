@@ -1,0 +1,61 @@
+5 regional-context matches; zero verified facility/basin stress joins.
+Built 36 groundwater observations, 20 claims, 33 scenario rows. 7 curated company-reported location records.
+SQL view: [('Baseline', 2200000.0), ('Alternative', 1500000.0)]
+Groundwater rows: 36
+test_comparison_flags (test_company_reporting.CompanyReportingTests.test_comparison_flags) ... ok
+test_latest_periods_are_not_aligned (test_company_reporting.CompanyReportingTests.test_latest_periods_are_not_aligned) ... ok
+test_missing_wue_not_zero (test_company_reporting.CompanyReportingTests.test_missing_wue_not_zero) ... ok
+test_three_distinct_operators (test_company_reporting.CompanyReportingTests.test_three_distinct_operators) ... ok
+test_all_sources_have_hashed_capture (test_evidence_status.EvidenceStatus.test_all_sources_have_hashed_capture) ... ok
+test_ten_areas_and_honest_global_gap (test_evidence_status.EvidenceStatus.test_ten_areas_and_honest_global_gap) ... ok
+test_alternative_tradeoff (test_model.AccountingTests.test_alternative_tradeoff) ... ok
+test_break_even (test_model.AccountingTests.test_break_even) ... ok
+test_capacity (test_model.AccountingTests.test_capacity) ... ok
+test_indirect_double_count_rejected (test_model.AccountingTests.test_indirect_double_count_rejected) ... ok
+test_known_accounting (test_model.AccountingTests.test_known_accounting) ... ok
+test_missing_negative_nonfinite_rejected (test_model.AccountingTests.test_missing_negative_nonfinite_rejected) ... ok
+test_negative_savings_allowed (test_model.AccountingTests.test_negative_savings_allowed) ... ok
+test_no_change_projection (test_model.AccountingTests.test_no_change_projection) ... ok
+test_projection (test_model.AccountingTests.test_projection) ... ok
+test_projection_bounds (test_model.AccountingTests.test_projection_bounds) ... ok
+test_pue_below_one_rejected (test_model.AccountingTests.test_pue_below_one_rejected) ... ok
+test_withdrawal_rejected (test_model.AccountingTests.test_withdrawal_rejected) ... ok
+test_workload_mismatch (test_model.AccountingTests.test_workload_mismatch) ... ok
+test_wrong_energy_denominator_rejected (test_model.AccountingTests.test_wrong_energy_denominator_rejected) ... ok
+test_zero_baseline_pct_is_null (test_model.AccountingTests.test_zero_baseline_pct_is_null) ... ok
+test_zero_is_valid (test_model.AccountingTests.test_zero_is_valid) ... ok
+test_claim_lineage (test_model.EvidenceTests.test_claim_lineage) ... ok
+test_india_grain_and_completeness (test_model.EvidenceTests.test_india_grain_and_completeness) ... ok
+test_stage_not_recomputed_from_rounded_volumes (test_model.EvidenceTests.test_stage_not_recomputed_from_rounded_volumes) ... ok
+test_duplicate_region_rejected (test_overlay.OverlayTests.test_duplicate_region_rejected) ... ok
+test_overlay_uses_only_exact_named_regions (test_overlay.OverlayTests.test_overlay_uses_only_exact_named_regions) ... ok
+test_unmatched_is_not_assigned_safe (test_overlay.OverlayTests.test_unmatched_is_not_assigned_safe) ... ok
+test_mismatch_is_failure (test_postgres_verifier.PostgresComparison.test_mismatch_is_failure) ... ok
+test_order_and_tolerance (test_postgres_verifier.PostgresComparison.test_order_and_tolerance) ... ok
+test_changed_bytes_require_review_even_if_anchor_matches (test_source_refresh.RefreshReview.test_changed_bytes_require_review_even_if_anchor_matches) ... ok
+test_canonical_and_legacy (test_static_site.StaticSite.test_canonical_and_legacy) ... ok
+test_evidence_without_javascript (test_static_site.StaticSite.test_evidence_without_javascript) ... ok
+test_scenario_export_warnings (test_static_site.StaticSite.test_scenario_export_warnings) ... /workspace/sites/thirstyai/tests/test_static_site.py:21: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/sites/thirstyai/outputs/scenarios.csv' mode='r' encoding='UTF-8'>
+  rows=list(csv.DictReader((ROOT/'outputs/scenarios.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.012s
+
+OK
+✔ accounting dimensions (1.074832ms)
+✔ semantic guards (0.432563ms)
+✔ tradeoff and break-even (0.531142ms)
+✔ zero baseline and equal workload (0.275727ms)
+✔ conditional futures (0.393775ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 99.573079
+Integration passed: SQLite integrity + semantic guard; SQL/Python parity; 30 Python/JS parity cases; evidence coverage.
+Rebuild complete. Start the app: python -m http.server 8000 --directory dist

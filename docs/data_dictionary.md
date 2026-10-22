@@ -34,3 +34,11 @@ One retrieval attempt per source: source ID, canonical URL, UTC retrieval time, 
 ## scenarios.csv and engine output
 
 `name`, `year`, `demand_growth`, `efficiency_gain` identify conditional assumptions. `it_mwh`, `facility_mwh`, `direct_l`, `indirect_l`, `total_l`, `carbon_kg` carry explicit units. `intensity_l_kwh_it` is total operational consumption per IT kWh; `evidence_type` is illustrative_scenario; `boundary` excludes manufacturing. These fields are not actual observations.
+
+## v0.2 company and location tables
+
+`company_water_reports.csv`: one company/metric/scope/period record. `value` is nullable; absence is never zero. `water_metric` and `energy_denominator` retain unresolved definitions. `confidence` concerns extraction; `assurance` records source-level assurance, not independent ThirstyAI measurement. `source_id` resolves to the direct source URL; `locator` is record-specific. SQL `vw_company_reporting` adds a comparison warning, not a performance rank.
+
+`location_water.csv`: seven curated official location/campus aggregates, not a complete inventory. Water values keep original units and periods. `regional_water_stress.csv`: three Aqueduct administrative baseline scores, with indicator/weight and spreadsheet row. `location_stress_overlay.csv`: five exact named-state matches; `match_scale` is STATE_PROXY_NOT_FACILITY_OR_BASIN; geographic confidence is Medium. No inferred coordinates, supply basin or causal effect.
+
+`scenarios.csv` includes a warning column; `evidence.json` includes `scenario_warning`. Evidence records remain reported evidence. Targets in `company_targets.json` are goals with their own boundaries, never deducted from consumption.

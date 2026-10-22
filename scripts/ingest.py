@@ -62,8 +62,7 @@ def fetch(source):
     prior=json.loads((ROOT/'research/provenance.json').read_text(encoding='utf-8'))
     digest=hashlib.sha256(data).hexdigest()
     reviewed=any(p.get('source_id')==source['id'] and p.get('sha256')==digest and p.get('status')=='fetched_anchor_checked' for p in prior)
-    manual=source.get('human_reviewed',False) or is_pdf or is_zip
-    status='fetched_anchor_checked' if (reviewed or not manual) else 'downloaded_pending_locator_review'
+    status='fetched_anchor_checked' if reviewed else 'downloaded_pending_locator_review'
     return text, {'source_id':source['id'],'url':source['url'],'retrieved_at':datetime.now(timezone.utc).isoformat(),
                   'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data),'status':status,
                   'review_note':'Anchor checks detect drift; human locator review remains required'}

@@ -1,13 +1,13 @@
 {
   "measurement": "Uncompressed local file bytes, not network transfer size or load time",
   "initial_assets": {
-    "index.html": 34671,
+    "index.html": 34690,
     "app.mjs": 43212,
     "model.mjs": 1942,
-    "style.css": 15285,
+    "style.css": 15625,
     "icon.svg": 150,
     "data/evidence.json": 66822
   },
-  "initial_total_bytes": 162082,
+  "initial_total_bytes": 162441,
   "social_card_bytes": 34060
 }

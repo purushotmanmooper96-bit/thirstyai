@@ -5,9 +5,11 @@ This document supplements the historical v0.1 limitations file; that file is not
 | Component | Status | Evidence / next check |
 |---|---|---|
 | Python / SQLite / JavaScript | Executed in development | `python scripts/reproduce.py`; unit tests, semantic rejection and cross-language parity |
-| PostgreSQL | Verifier and PostgreSQL 16 CI job added; execution pending | `python scripts/verify_postgres.py --load`; record CI run and author's Windows result separately |
+| PostgreSQL | Executed on PostgreSQL 16 in CI; author’s Windows confirmation pending | All three views PASS in runs 39758080419 and 39758457275; `python scripts/verify_postgres.py --load` for author’s Windows check |
 | Power BI Desktop | Build pack only; no PBIX | Follow `bi/BUILD_WINDOWS.md`, send screenshots + refresh results |
 | Microsoft Excel Desktop | Unconfirmed | Three expected cases and invalid-input checks in `docs/excel_validation.md` |
 | Existing workbook | v0.1 snapshot | Calculator and original sources; expanded company evidence lives in CSV/JSON/SQL |
 
 Never use a passing SQLite run as evidence that PostgreSQL passed, or cached spreadsheet values as Excel Desktop recalculation evidence.
+
+Reproduction CI on commit `882b7209b87cc2aa73ef4cf8248c4bb067290bca` passed on ubuntu-latest and windows-latest (run 39758457275). UTF-8 file handling fixed a failure in the first Windows run. Lighthouse and mobile results: [site QA](site_qa.md).

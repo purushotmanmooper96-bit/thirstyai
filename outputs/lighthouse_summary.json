@@ -1,0 +1,31 @@
+{
+  "run_id": 39758457275,
+  "commit": "882b7209b87cc2aa73ef4cf8248c4bb067290bca",
+  "target": "http://localhost:8765/ (CI-served dist, not public CDN)",
+  "reports": {
+    "desktop": {
+      "lighthouse_version": "12.8.2",
+      "fetch_time": "2026-10-22T09:50:42.802Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcp_ms": 493.91555,
+      "cls": 0
+    },
+    "mobile": {
+      "lighthouse_version": "12.8.2",
+      "fetch_time": "2026-10-22T09:50:29.965Z",
+      "scores": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcp_ms": 2224.82405,
+      "cls": 0
+    }
+  }
+}
