@@ -2,16 +2,9 @@
 
 Drafts only; no social posts have been sent. No forecast of virality, stars, hiring or endorsements is justified. A useful demonstration and correctable claims are the strategy.
 
-## Show HN
+## Show HN — author-written submission required
 
-Title: Show HN: ThirstyAI — compare AI water claims without mixing their boundaries
-
-I built ThirstyAI, an open evidence atlas and cooling decision lab. It shows source-linked disclosures from three data-centre operators, an India groundwater context table and hypothetical water–energy trade-offs. Inspect the year, withdrawal/consumption boundary, fleet, locator and caveat beside each figure.
-
-I want feedback on comparability: company totals are not AI-only, years and fleets differ, and the small regional overlay has zero verified exact facility/basin joins. There is no universal water-per-prompt number or global AI water total. PostgreSQL/SQLite/Python/browser checks and provenance are in the repo; Power BI and native Excel confirmation remain open.
-
-Demo: https://purushotmanmooper96-bit.github.io/thirstyai/
-Code: https://github.com/purushotmanmooper96-bit/thirstyai
+The [HN guidelines](https://news.ycombinator.com/newsguidelines.html) prohibit generated or AI-edited text. Do not submit an AI-written launch draft there. Write your own account of what you built, an inspectable definition mismatch, what the live demo does and its limits. Read the live rules before posting, avoid vote solicitation, and be available to discuss the work personally. See the current [seven-day playbook](product_growth_audit_2026-10-22.md).
 
 ## LinkedIn
 

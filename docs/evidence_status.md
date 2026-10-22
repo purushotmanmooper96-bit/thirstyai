@@ -21,6 +21,8 @@ Source names, direct URLs, licence notes, locators, hashes and retrieval times: 
 
 This release does **not** establish a global AI water total or an uncertainty range for one. Electricity totals cannot become water totals without defensible local factors, workload shares and boundaries. The 2024 LBNL US report was opened during review, but its PDF download was blocked in this environment. It is not added as a hashed headline source. A US estimate would still not answer the global question.
 
+A published global withdrawal scenario is now documented as a [research candidate](global_water_estimates.md), with an exact-byte capture and explicit pending human review. It is excluded from headline evidence and is not a measured global inventory.
+
 ## India: connected context, no invented attribution
 
 WRI India publishes an analysis of data-centre siting and water stress. The CGWB state table describes all-user groundwater flows. They answer different questions. We do not infer the AI share of extraction, or call a state extraction ratio a facility stress rating. See [location overlay](location_overlay.md).

@@ -1,4 +1,4 @@
-# Sceptical review of ThirstyAI v0.2
+# Sceptical review of ThirstyAI v0.2.1
 
 Reviewed 22 October 2026. This is a critical self-review in peer-reviewer and hiring-reviewer roles, not an external endorsement, environmental audit, hiring prediction or guarantee of reach. Historical v0.1 results are preserved in audit_v01.md.
 
@@ -65,22 +65,23 @@ All location rows are company-reported operational aggregates, not AI-only obser
 - Default scenario inputs (1000 IT MWh, PUE 1.2/1.4, consumptive WUE 1/0.1 L/IT kWh, grid consumption 1 L/facility kWh and carbon 0.4 kg/facility kWh) are author-selected hypothetical assumptions. Baseline 2.2 ML, alternative 1.5 ML, 31.8% modeled reduction, 200 MWh extra energy and 4.5 L/kWh shared-grid break-even are calculated examples, not company results, forecasts or savings achieved. Manufacturing/local scarcity impacts excluded.
 - Future rates and dates to 2035 are conditional scenario controls, not empirical trend estimates. There is no supported global future AI-water range. Tests and export warnings keep this explicit.
 
-## What passed
+## Current verification (supersedes the historical v0.2 test counts)
 
-- Local full rebuild: 35 Python tests, five Node tests; SQLite integrity and semantic guards; all three implementations agree across 30 deterministic Python/JavaScript cases, plus SQL scenario checks.
-- Windows/Linux reproduction and PostgreSQL 16 server parity passed on GitHub run 39758457275, commit 882b7209b87cc2aa73ef4cf8248c4bb067290bca. PostgreSQL compared every column in all three views (36 groundwater, two scenario and 16 company rows). The later source-refresh guard and execution of the five read-only analysis queries have local regression tests and will be checked in the final CI run.
-- Public root site and legacy hash redirect verified in browser. Company view, equal-workload recalculation and keyboard slider operation checked. Static HTML is tested for evidence content, sources, limits and fallback anchors.
-- Mobile viewport 390 × 844 checked; no page-wide horizontal overflow. Sampled contrast pairs exceed 4.5:1. Lighthouse lab scores, profile, version and caveats: docs/site_qa.md and outputs/lighthouse_summary.json. These are neither physical-phone testing nor full WCAG certification.
+- Release v0.2.1 is published at commit `e415ebe556592d02fe3eb4527c8276257d1a41c5`; the application was deployed and checked live. [Verification record](verification_v021.md) links the actual CI and Pages runs.
+- That release passed 58 Python tests, 13 JavaScript tests, seven Chrome interaction groups, 30 Python/JS parity cases, SQLite checks, PostgreSQL 16 comparisons for three views and five queries, notebook execution and repository checks. The current follow-up passes 65 Python tests locally (including seven Power BI handoff regressions), 13 JavaScript tests, the same parity checks, notebook execution and documentation checks. Its GitHub CI results belong to its own commit, not retroactively to the release.
+- CI Lighthouse 12.8.2: mobile performance 97, accessibility/best practices/SEO 100; desktop 100 in all four categories. These are lab scores, not field measurements or full WCAG certification.
+- Source refresh stages candidates, preserves reviewed data on failure and requires explicit exact-hash review promotion. Share links preserve assumptions and version; invalid input blocks results and export. PNG/JSON exports and source-fetch fallback have Chrome coverage.
+- Current Power BI handoff checks numeric types, source references, warnings, missing values and boundary fields. It does not execute Power Query, DAX or the Desktop renderer. The workbook remains its documented v0.1 calculator/source snapshot.
 
 ## Unverified or incomplete
 
-1. Author’s PostgreSQL/pgAdmin Windows run, a built/validated PBIX, and native Microsoft Excel recalculation. docs/limitations.md is deliberately unchanged until author confirmation; docs/validation_v02.md is the current supplementary record.
-2. Independent underlying company measurements, common reporting periods/fleets, unambiguous compatible annual WUE for all operators and full assurance scope evaluation.
-3. Actual water supply basins, seasonal facility peaks, local user competition/causal effects, discharge quality and AI chip lifecycle allocation.
-4. A defensible global AI water total, uncertainty range and validated worldwide hotspot ranking. These cannot be filled with a guessed grid factor or state average.
-5. Full manual accessibility review, public-CDN field performance and physical-device testing. Automated Lighthouse scores do not settle these.
-6. GitHub repository-specific social preview upload stalled in the browser; the 1200×630 website social image and OG/Twitter tags are live, but the repository upload is not claimed. Maintainer: Settings → General → Social preview → Edit → Upload dist/social-preview.png.
-7. Tag/release publication remains a maintainer step as requested; notes and exact PowerShell/gh commands are in docs/RELEASE_v0.2.md. Social launch drafts have not been posted.
+1. Native Excel Desktop, the author's PostgreSQL/pgAdmin Windows setup, and a built/refreshed Power BI report. [Desktop sign-off](desktop_signoff.md) identifies the exact evidence needed. Issue #5 remains open for native Excel. Historical limitations remain unchanged pending author confirmation.
+2. Independent underlying company measurements, harmonized reporting years/fleets, unambiguous compatible annual WUE for all operators and full assurance scope evaluation.
+3. Actual water supply basins, seasonal facility peaks, local competition/causal effects, discharge monitoring and AI chip lifecycle allocation. State proxies must remain proxies.
+4. A measured global AI water inventory and a validated worldwide hotspot ranking. A [published global scenario candidate](global_water_estimates.md) is captured separately, **human review pending and headline-ineligible**; it does not close the inventory gap.
+5. Physical-device/assistive-technology testing, full manual accessibility review and public-CDN field/load measurements. Automated Chrome and Lighthouse checks do not certify these.
+6. GitHub repository social-preview upload is not confirmed. The website has its own social card. Maintainer path: Settings → General → Social preview → Edit → Upload `dist/social-preview.png`.
+7. Social launch execution and user feedback remain separate from prepared distribution materials. No social posts were sent. There is no evidence of virality, external endorsement or hiring outcomes.
 
 ## Weaknesses a critic should raise
 
@@ -109,22 +110,18 @@ From a hiring reviewer’s perspective, the strongest signal is the author expla
 
 ## Top five remaining fixes
 
-1. Obtain one independently corroborated local case with official supply source, monthly withdrawal/consumption and local stakeholder evidence; document omissions.
-2. Replace a state proxy with one licensed, validated exact supply-basin join; do not treat a guessed campus point as the supply source.
-3. Complete and review the author’s PostgreSQL Windows, Power BI and native Excel checklists, then update the historical limitations only with explicit confirmation.
-4. Expand sampling and quantify uncertainty only where defensible; add current local electricity-water and semiconductor lifecycle evidence before estimating totals.
-5. Complete manual accessibility/physical-device checks, upload GitHub social preview and publish the checked release; evaluate actual sourced contributions and successful reproductions after launch.
+1. Run the native [Desktop checks](desktop_signoff.md) and return actual reports and screenshots; never close a validation item from a self-test alone.
+2. Obtain an independently corroborated local case with documented supply, seasonal water quantities and local stakeholder evidence.
+3. Replace a regional proxy only when a legally reusable, validated supply-basin mapping is available; a campus coordinate alone is insufficient.
+4. Human-review the new global scenario candidate and assess its assumptions before any headline promotion; broaden sampling before industry generalization.
+5. Complete assistive-technology/physical-device checks and repository social-preview upload, then execute the community-appropriate [launch playbook](product_growth_audit_2026-10-22.md). Evaluate actual source contributions and successful reproductions.
 
 ## Reproduce on Windows
 
 ```powershell
-git pull --ff-only origin main
+git pull --ff-only
 python scripts/reproduce.py
-Get-Content docs/validation_v02.md
+Get-Content outputs/powerbi/manifest.json
 ```
 
-Use docs/verify_postgres_windows.md for private environment-variable setup; never paste a password in an issue. Five bounded contribution tasks: GitHub issues #1–#5, all labelled good first issue.
-
-## Follow-up repository review
-
-The failure email identified an intermittent Chrome/Lighthouse startup error in run 39771985828; data/Windows/Linux/PostgreSQL jobs passed there. A later green run did not fix that startup weakness. See [ci_recheck.md](ci_recheck.md) for the bounded explicit-port audit runner and additional defects fixed in overflow handling, source-review coverage, generated-file stability, seed execution and package versioning. The expanded local suite is 48 Python tests and six JavaScript tests plus repository/notebook/parity checks. The five planned contribution issues remain open honestly. Earlier numerical evidence and native-application limitations are unchanged.
+Use [PostgreSQL Windows instructions](verify_postgres_windows.md) for environment-variable setup. The current request-by-request status is [scope_completion.md](scope_completion.md); [validation_current.md](validation_current.md) is the current validation index. Earlier issue-fix details remain in [ci_recheck.md](ci_recheck.md); its historical counts and issue states are not current status.

@@ -1,0 +1,142 @@
+{
+  "status": "DATA_HANDOFF_CHECKED_NOT_POWER_BI_DESKTOP_VALIDATED",
+  "tables": {
+    "Groundwater": {
+      "rows": 36,
+      "null_values": 0,
+      "sha256": "904b5a2dc2c4f7ab0edef25c6fe725f6d875a0cbeb7954a2aae8c8753d79691a",
+      "columns": {
+        "state": "type text",
+        "recharge_bcm": "type number",
+        "extractable_bcm": "type number",
+        "extraction_bcm": "type number",
+        "stage_pct": "type number",
+        "year": "Int64.Type",
+        "source_id": "type text",
+        "evidence_type": "type text",
+        "scope": "type text",
+        "locator": "type text"
+      }
+    },
+    "CompanyReports": {
+      "rows": 16,
+      "null_values": 2,
+      "sha256": "2b45d5e8a5bc48a6c14c26fa769a75118380289595b5775d85909a35e3f34dd9",
+      "columns": {
+        "observation_id": "type text",
+        "company": "type text",
+        "metric": "type text",
+        "value": "type number",
+        "unit": "type text",
+        "period": "type text",
+        "geography": "type text",
+        "scope": "type text",
+        "water_metric": "type text",
+        "energy_denominator": "type text",
+        "evidence_type": "type text",
+        "source_id": "type text",
+        "locator": "type text",
+        "confidence": "type text",
+        "confidence_basis": "type text",
+        "assurance": "type text",
+        "caveat": "type text"
+      }
+    },
+    "LocationContext": {
+      "rows": 5,
+      "null_values": 0,
+      "sha256": "661f367a0192226f8e14c52890b78e602dd33699a119badbb537a7981772c95a",
+      "columns": {
+        "location_id": "type text",
+        "company": "type text",
+        "location": "type text",
+        "value": "type number",
+        "unit": "type text",
+        "period": "type text",
+        "water_metric": "type text",
+        "source_id": "type text",
+        "locator": "type text",
+        "confidence": "type text",
+        "scope": "type text",
+        "caveat": "type text",
+        "stress_region": "type text",
+        "stress_score": "type number",
+        "stress_label": "type text",
+        "stress_period": "type text",
+        "stress_source_id": "type text",
+        "stress_locator": "type text",
+        "match_scale": "type text",
+        "match_confidence": "type text",
+        "match_caveat": "type text"
+      }
+    },
+    "Scenarios": {
+      "rows": 33,
+      "null_values": 0,
+      "sha256": "4595c8af2a873b694d39e8d8c7d843e4d1e8a174b79bf71354c099fa76fafe46",
+      "columns": {
+        "warning": "type text",
+        "name": "type text",
+        "year": "Int64.Type",
+        "demand_growth": "type number",
+        "efficiency_gain": "type number",
+        "it_mwh": "type number",
+        "facility_mwh": "type number",
+        "direct_l": "type number",
+        "indirect_l": "type number",
+        "total_l": "type number",
+        "carbon_kg": "type number",
+        "intensity_l_kwh_it": "type number",
+        "evidence_type": "type text",
+        "boundary": "type text"
+      }
+    },
+    "Claims": {
+      "rows": 20,
+      "null_values": 0,
+      "sha256": "d2d805c4224d24e3329358f704f3bc32cf84aebc05cce91b048eabd9f483b474",
+      "columns": {
+        "id": "type text",
+        "title": "type text",
+        "value": "type number",
+        "unit": "type text",
+        "period": "type text",
+        "geography": "type text",
+        "scope": "type text",
+        "evidence_type": "type text",
+        "source_id": "type text",
+        "locator": "type text",
+        "caveat": "type text",
+        "confidence": "type text",
+        "water_metric": "type text",
+        "energy_denominator": "type text"
+      }
+    },
+    "Sources": {
+      "rows": 19,
+      "null_values": 0,
+      "sha256": "162a4bd84cb30faf88177fccec168438af22f0c43c05280c34e1bb87e890a9fb",
+      "columns": {
+        "source_id": "type text",
+        "title": "type text",
+        "publisher": "type text",
+        "url": "type text",
+        "locator": "type text",
+        "scope": "type text",
+        "licence": "type text"
+      }
+    },
+    "EvidenceStatus": {
+      "rows": 10,
+      "null_values": 0,
+      "sha256": "51f4a5aca68008109f8528204fb1b408fea7355e170fc045766cfa53094a39b9",
+      "columns": {
+        "topic": "type text",
+        "level": "type text",
+        "source_locator": "type text",
+        "caveat": "type text",
+        "missing": "type text"
+      }
+    }
+  }
+}
