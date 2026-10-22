@@ -6,13 +6,15 @@
 
 **An evidence atlas and decision lab for data-centre water, cooling and energy choices.**
 
-[Explore the code](#quickstart) · [Methods](docs/methodology.md) · [Data dictionary](docs/data_dictionary.md) · [Limitations](docs/limitations.md)
+[**Open the live dashboard**](https://purushotmanmooper96-bit.github.io/thirstyai/) · [Explore the code](#quickstart) · [Methods](docs/methodology.md) · [Data dictionary](docs/data_dictionary.md) · [Limitations](docs/limitations.md)
 
 </div>
 
 AI's water footprint is not one number. A useful answer needs a workload, an energy boundary, a cooling system and a location.
 
 ThirstyAI combines a public dashboard, auditable Python accounting, SQL views, primary-source provenance and an India groundwater study. Its central interaction holds useful IT work constant while changing water and electricity assumptions. **The sandbox inputs are illustrative, not measurements from named facilities.**
+
+![ThirstyAI live dashboard](outputs/dashboard-overview.png)
 
 ## What you can do
 
@@ -91,7 +93,7 @@ The WUE denominator must be IT kWh; its numerator must be consumption and exclud
 
 `python scripts/reproduce.py` rebuilds the browser dataset, SQL seeds, SQLite database and scenario exports; runs 19 Python tests and 5 JavaScript tests; and checks SQL/Python agreement plus 30 deterministic Python/JavaScript parity cases. It also checks source/claim lineage and retained missing global totals.
 
-Local browser QA covers shared-workload recalculation, reset, India search/threshold filtering, futures controls, evidence search and export actions. See [audit](docs/audit.md) for exact completed checks and limitations. CI is configured for Windows and Linux; a workflow file is not evidence that a remote run passed.
+Local browser QA covers shared-workload recalculation, reset, India search/threshold filtering, futures controls, evidence search and export actions. See [audit](docs/audit.md) for exact completed checks and limitations. GitHub CI passed on Windows and Linux for the first release; see the repository Actions page for the current commit.
 
 ## Project layout
 

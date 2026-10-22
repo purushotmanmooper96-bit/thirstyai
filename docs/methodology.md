@@ -37,3 +37,7 @@ A claim stores source ID, period, geography, scope, evidence type, locator and c
 ## Geography and causality
 
 State context is not a site's water source. No facility/basin mapping, supply-network tracing or causal estimate is implemented in v0.1. Indirect water could occur elsewhere. Aqueduct is a screening resource; its technical note calls for local investigation. Replenishment is not subtracted from local consumption.
+
+## SQL engines
+
+The runnable audit uses SQLite. A separate PostgreSQL schema adapts view creation and floating-point types for that engine. PostgreSQL execution is not claimed in this environment.

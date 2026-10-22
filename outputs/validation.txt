@@ -22,14 +22,14 @@ test_india_grain_and_completeness (test_model.EvidenceTests.test_india_grain_and
 test_stage_not_recomputed_from_rounded_volumes (test_model.EvidenceTests.test_stage_not_recomputed_from_rounded_volumes) ... ok
 
 ----------------------------------------------------------------------
-Ran 19 tests in 0.002s
+Ran 19 tests in 0.001s
 
 OK
-✔ accounting dimensions (1.132216ms)
-✔ semantic guards (0.312421ms)
-✔ tradeoff and break-even (0.380944ms)
-✔ zero baseline and equal workload (0.20578ms)
-✔ conditional futures (0.209877ms)
+✔ accounting dimensions (0.88224ms)
+✔ semantic guards (0.330317ms)
+✔ tradeoff and break-even (0.534285ms)
+✔ zero baseline and equal workload (0.194173ms)
+✔ conditional futures (0.357869ms)
 ℹ tests 5
 ℹ suites 0
 ℹ pass 5
@@ -37,6 +37,6 @@ OK
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 102.519431
+ℹ duration_ms 86.549717
 Integration passed: SQLite integrity + semantic guard; SQL/Python parity; 30 Python/JS parity cases; evidence coverage.
 Rebuild complete. Start the app: python -m http.server 8000 --directory dist

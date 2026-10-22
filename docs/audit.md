@@ -27,3 +27,11 @@ UI checks completed later in the release are appended below rather than implied 
 - India above-100% filter returned Punjab, Rajasthan and Haryana, matching the source and SQL analysis.
 - Setting demand growth to zero changed the future trajectory and held the demand-only line constant.
 - Future CSV export generated a browser download. Evidence search for Gemini returned the energy and scoped direct-water claims.
+
+## Clean checkout
+
+A fresh public GitHub clone passed the complete offline rebuild, 24 unit/data tests, SQL checks and 30 cross-language parity cases on Linux. PostgreSQL uses a separate schema for engine-specific syntax; its execution remains unverified.
+
+## Hosted verification
+
+GitHub Actions reproducibility run 39752135496 passed on ubuntu-latest and windows-latest. GitHub Pages run 39752587855 succeeded and the public dashboard rendered successfully in the connected browser. Subsequent commits retain their own CI status; see Actions for current results.

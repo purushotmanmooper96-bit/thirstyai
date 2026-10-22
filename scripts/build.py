@@ -1,6 +1,6 @@
 """Build distributable evidence JSON, exports, SQL fixture and conditional scenarios."""
 from pathlib import Path
-import sys,json,csv,hashlib
+import sys,json,csv,hashlib,shutil
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from thirstyai.model import Inputs,calculate,project
 
@@ -32,5 +32,6 @@ def main():
  (ROOT/'sql/seed.sql').write_text('\n'.join(fixture)+'\n')
  manifest={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'research').glob('*.json'))}
  (ROOT/'outputs/build_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+ shutil.copytree(ROOT/'dist', ROOT/'docs/site', dirs_exist_ok=True)
  print(f'Built {len(india)} groundwater observations, {len(claims)} claims, {len(scenario)} scenario rows. No facility water records.')
 if __name__=='__main__':main()

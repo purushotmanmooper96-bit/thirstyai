@@ -17,4 +17,4 @@ Pages:
 
 Verify one scenario slice against `outputs/scenarios.csv` and Python: baseline 2025 = 2,200,000 L under the illustrative defaults. Select exactly one year and one trajectory for scalar cards. Never sum ratios or different scenarios into a total. Screenshots and Desktop rendering remain a task for a Windows environment.
 
-PostgreSQL alternative: execute `sql/schema.sql`, `sql/sources_seed.sql` and `sql/seed.sql` in that order with psql. Connect Desktop to the resulting views. The schema uses portable SQL, but PostgreSQL execution has not been verified here.
+PostgreSQL alternative: execute `sql/postgresql_schema.sql`, `sql/sources_seed.sql` and `sql/seed.sql` in that order with psql. Connect Desktop to the resulting views. A separate PostgreSQL schema uses CREATE OR REPLACE VIEW and DOUBLE PRECISION. PostgreSQL execution has not been verified here.

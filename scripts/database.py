@@ -1,4 +1,4 @@
-"""Build the runnable SQLite audit database; also export PostgreSQL-compatible inserts."""
+"""Build the runnable SQLite audit database; also export PostgreSQL-compatible source inserts."""
 from pathlib import Path
 import sqlite3,json
 ROOT=Path(__file__).resolve().parents[1]

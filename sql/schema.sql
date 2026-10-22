@@ -1,4 +1,4 @@
--- Portable SQLite/PostgreSQL schema. Grain: one state/UT and assessment year.
+-- SQLite audit schema. Grain: one state/UT and assessment year.
 CREATE TABLE IF NOT EXISTS sources (
  source_id TEXT PRIMARY KEY, title TEXT NOT NULL, url TEXT NOT NULL,
  scope TEXT NOT NULL, locator TEXT NOT NULL
