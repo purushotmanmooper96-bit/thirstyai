@@ -1,0 +1,11 @@
+[
+  {"name":"Baseline","inputs":[1000,1.2,1,1,0.4],"expected":[1200,1000000,1200000,2200000,480000]},
+  {"name":"Double work","inputs":[2000,1.2,1,1,0.4],"expected":[2400,2000000,2400000,4400000,960000]},
+  {"name":"Alternative","inputs":[1000,1.4,0.1,1,0.4],"expected":[1400,100000,1400000,1500000,560000]},
+  {"name":"Blank WUE","inputs":[1000,1.2,null,1,0.4],"expected":["Invalid input","Invalid input","Invalid input","Invalid input","Invalid input"]},
+  {"name":"Text WUE","inputs":[1000,1.2,"text",1,0.4],"expected":["Invalid input","Invalid input","Invalid input","Invalid input","Invalid input"]},
+  {"name":"PUE below one","inputs":[1000,0.9,1,1,0.4],"expected":["Invalid input","Invalid input","Invalid input","Invalid input","Invalid input"]},
+  {"name":"Negative intensity","inputs":[1000,1.2,-1,1,0.4],"expected":["Invalid input","Invalid input","Invalid input","Invalid input","Invalid input"]},
+  {"name":"Zero work","inputs":[0,1.2,1,1,0.4],"expected":[0,0,0,0,0]},
+  {"name":"Zero water factors","inputs":[1000,1.2,0,0,0.4],"expected":[1200,0,0,0,480000]}
+]

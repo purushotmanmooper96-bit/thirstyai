@@ -8,7 +8,10 @@ PowerShell from the public checkout:
 
 ```powershell
 python scripts/reproduce.py
+.\scripts\verify_excel.ps1
 Start-Process .\excel\ThirstyAI_Audit.xlsx
 ```
 
 In Excel choose Formulas → Calculation Options → Automatic, then press Ctrl+Alt+F9. Follow the three cases and invalid-input checks in the linked checklist. Reply to issue #5 with Excel version/date, observed outputs and screenshots; discrepancies should be fixed before marking it complete.
+
+The new verifier automates native cases and save/reopen on a working copy and writes actual engine results to JSON. Its fixture/comparison tests run in CI, including Windows PowerShell. This prepares the native check; it does not establish that native Excel has run. See the linked checklist for report location and remaining visual/author confirmation.

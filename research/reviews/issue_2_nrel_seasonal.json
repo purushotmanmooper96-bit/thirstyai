@@ -1,0 +1,30 @@
+{
+  "url": "https://docs.nlr.gov/docs/fy18osti/72196.pdf",
+  "sha256": "c850d6b4bc344b244a6fd4e8351c7f0d1496b71e880bd29712b1c9e34b60da14",
+  "retrieved_at": "2026-10-22T12:32:00.878104+00:00",
+  "byte_count": 1030424,
+  "issue": 2,
+  "candidate_id": "NREL18-SEASONAL",
+  "publisher": "National Renewable Energy Laboratory; operator-authored report with project partners",
+  "title": "Thermosyphon Cooler Hybrid System for Water Savings in an Energy-Efficient HPC Data Center",
+  "publication_date": "2018-09",
+  "report_id": "NREL/TP-2C00-72196",
+  "facility": "ESIF HPC Data Center, Golden, Colorado, United States",
+  "period": "2016-09-01/2017-08-31",
+  "locator": "Figure 4, printed p.6 / PDF p.13; section 2.2 printed p.5 / PDF p.12; section 3.2.1 printed pp.10\u201311 / PDF pp.17\u201318",
+  "water_metric": "Publisher calls this consumption: cooling-tower supply including sewer flows; not net evaporative consumption",
+  "unit": "Gallons and litres as charted; no monthly values digitised",
+  "boundary": "Direct cooling-tower system; excludes unmetered makeup-air humidification, off-site electricity water and manufacturing",
+  "evidence_type": "operator_reported_observation_with_separate_estimated_savings",
+  "review_status": "Assistant reviewed PDF text and rendered Figure 4; author review welcome",
+  "confidence": "High for source/locator; no monthly numeric extraction",
+  "licence": "No broad reuse licence established. Free access is not a redistribution licence. Link and attributed factual summary only; raw PDF and chart excluded.",
+  "headline_eligible": false,
+  "qualifies": true,
+  "monthly_values_extracted": false,
+  "caveats": [
+    "Chart separates actual tower use from estimated savings.",
+    "Not an AI-only or hyperscaler-fleet measurement.",
+    "No drought attribution or independent remeasurement."
+  ]
+}

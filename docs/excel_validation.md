@@ -2,6 +2,24 @@
 
 The workbook is a v0.1 snapshot of the calculator and original source register, not the expanded v0.2 evidence database. Use CSV/JSON and SQL for the new company data. No claim of Excel Desktop validation is made until the author confirms it.
 
+## Run the checks automatically in Excel Desktop
+
+From your Windows checkout, with Microsoft Excel Desktop installed and activated:
+
+```powershell
+git pull --ff-only
+python scripts/reproduce.py
+.\scripts\verify_excel.ps1
+```
+
+The script starts a separate Excel instance, opens a working copy, sets automatic calculation and calls [CalculateFullRebuild](https://learn.microsoft.com/en-us/office/vba/api/excel.application.calculatefullrebuild). It runs the three cases below plus blank, text, invalid PUE, negative intensity and valid zero cases. It restores baseline, saves, reopens and recalculates, then writes `outputs/excel-validation/<UTC-run>/report.json` with Excel version/build, actual outputs and the original workbook's SHA-256. It does not upload anything, update limitations or close the issue. The original workbook is not edited. Macros and external-link updates are disabled in the test instance.
+
+`PASS` means these machine checks passed in the installed Excel engine. Review the JSON, perform the remaining visual/India checks below, capture Calculator screenshots without personal data, and confirm the results in issue #5. `BLOCKED_OR_ERROR` or `FAIL` is not validation. Share the report if a discrepancy occurs.
+
+CI runs ` .\scripts\verify_excel.ps1 -SelfTest` to check verifier logic **without Excel**. Python tests compare its fixture expectations to the Python engine and confirm shipped outputs contain formulas. Neither substitutes for the native run. The verifier's native COM path remains unverified until run on a machine with Excel Desktop.
+
+## Manual checklist and visual confirmation
+
 1. Open `excel/ThirstyAI_Audit.xlsx` in Microsoft Excel Desktop. Save a working copy.
 2. **Formulas → Calculation Options → Automatic**. Press **Ctrl+Alt+F9** to recalculate all formulas. Do not merely inspect cached results.
 3. On **Calculator**, enter each row below in B7:B11. Compare F7:F11 to the expected outputs. All are **ILLUSTRATIVE INPUTS — NOT MEASUREMENTS**; water means operational consumption, excludes manufacturing and may occur in different basins.

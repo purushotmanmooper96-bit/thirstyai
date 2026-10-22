@@ -11,7 +11,7 @@ Reviewed 22 October 2026. “Strong” means the stated narrow question has a di
 | Heat-wave / drought peaks | Partial | METAVWB24 pp.9,25 | City seasonal demand and basin drought context are not data-centre peak measurements | Monthly / peak facility demand during heat waves and droughts |
 | Competition with local users | Partial | METAVWB24 pp.17,25 | Shared basin and restoration context do not prove displacement or causation | Independent local water balances, rights and household/agricultural effects |
 | Water quality and discharge | Partial | TSMCWATER26 “Identifying Risks via Three Key Indicators” | Supplier programme reporting, not independently sampled effluent | Facility discharge temperature, pollutants, permit and monitoring results |
-| Reporting transparency | Strong for definition differences | MS26DATA Tables 8,15; META25 p.18; GOOGLE26 pp.84–85 | Years, fleets, definitions and assurance differ | Common annual + seasonal disclosure standard |
+| Reporting transparency | Strong for definition differences | MS26DATA Tables 8,15; META25 p.18; GOOGLE26 pp.87–88 | Years, fleets, definitions and assurance differ | Common annual + seasonal disclosure standard |
 | Growth of AI demand | Partial | IEA26 executive summary; LBNL26 abstract | All data centres, not AI-only; projections conditional | Realised future demand and consistent AI share |
 | Energy–water–carbon trade-offs | Partial | NREL12 abstract; MS24 “Mitigating energy impacts” | Technology-specific; lower direct cooling water can increase energy | Site-specific performance, cost and marginal grid impacts |
 
@@ -28,3 +28,7 @@ WRI India publishes an analysis of data-centre siting and water stress. The CGWB
 ## Maintenance
 
 Refresh sources deliberately; record SHA-256 and UTC retrieval time; inspect changed definitions and exact locators before promoting facts. Keep reported evidence, estimates, allocations and projections distinct. Revisit missing seasonal and basin data before adding hotspot or causal-impact claims.
+
+## Seasonal source candidate
+
+[Issue 2 review](issue_resolutions/2_seasonal_source_search.md) records one operator-published monthly chart and its supply/consumption caveat. It is source discovery, not an added monthly numeric dataset or evidence of drought harm.

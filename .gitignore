@@ -11,3 +11,4 @@ node_modules/
 .ci-tools/
 outputs/lighthouse-*.log
 outputs/lighthouse-*.report.*
+outputs/excel-validation/
