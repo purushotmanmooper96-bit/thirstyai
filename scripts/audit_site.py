@@ -4,7 +4,7 @@ CI has Chrome installed; no browser download, ignored failures or score fabricat
 from pathlib import Path
 from functools import partial
 from http.server import SimpleHTTPRequestHandler,ThreadingHTTPServer
-import argparse,json,os,shutil,socket,subprocess,tempfile,threading,time,urllib.request
+import argparse,json,os,signal,shutil,socket,subprocess,tempfile,threading,time,urllib.request
 ROOT=Path(__file__).resolve().parents[1]
 def free_port():
  with socket.socket() as sock:
@@ -23,6 +23,17 @@ def lighthouse_command(cli,url,port,profile,output):
  command=['node',str(cli),url,f'--port={port}','--hostname=127.0.0.1','--output=json','--output=html',f'--output-path={output}','--no-enable-error-reporting','--quiet']
  if profile=='desktop':command.append('--preset=desktop')
  return command
+def stop_chrome(process):
+ # Chrome children can outlive the parent and keep writing the profile.
+ if os.name=='posix':
+  for sig in (signal.SIGTERM,signal.SIGKILL):
+   try:os.killpg(process.pid,sig)
+   except ProcessLookupError:pass
+  process.wait(timeout=5)
+ elif process.poll() is None:
+  process.terminate()
+  try:process.wait(timeout=10)
+  except subprocess.TimeoutExpired:process.kill();process.wait(timeout=5)
 class QuietHandler(SimpleHTTPRequestHandler):
  def log_message(self,*args):pass
 
@@ -41,7 +52,7 @@ def main():
   url=f'http://127.0.0.1:{server.server_port}/';port=free_port()
   with tempfile.TemporaryDirectory(prefix='thirstyai-chrome-') as profile_dir,(out/'lighthouse-chrome.log').open('w',encoding='utf-8') as log:
    try:
-    process=subprocess.Popen([chrome,'--headless=new','--no-sandbox','--disable-dev-shm-usage',f'--remote-debugging-port={port}','--remote-debugging-address=127.0.0.1',f'--user-data-dir={profile_dir}','--no-first-run','--no-default-browser-check','about:blank'],stdout=log,stderr=subprocess.STDOUT)
+    process=subprocess.Popen([chrome,'--headless=new','--no-sandbox','--disable-dev-shm-usage',f'--remote-debugging-port={port}','--remote-debugging-address=127.0.0.1',f'--user-data-dir={profile_dir}','--no-first-run','--no-default-browser-check','about:blank'],stdout=log,stderr=subprocess.STDOUT,start_new_session=(os.name=='posix'))
     wait_ready(f'http://127.0.0.1:{port}/json/version',process)
     for profile in ('mobile','desktop'):
      subprocess.run(lighthouse_command(cli,url,port,profile,out/f'lighthouse-{profile}'),cwd=ROOT,check=True,timeout=180)
@@ -51,9 +62,6 @@ def main():
       raise RuntimeError(f'{profile} incomplete Lighthouse report')
      print(profile,{key:round(value['score']*100) for key,value in report['categories'].items()},flush=True)
    finally:
-    if process is not None and process.poll() is None:
-     process.terminate()
-     try:process.wait(timeout=10)
-     except subprocess.TimeoutExpired:process.kill();process.wait(timeout=5)
+    if process is not None:stop_chrome(process)
  finally:server.shutdown();server.server_close();worker.join(timeout=5)
 if __name__=='__main__':main()
