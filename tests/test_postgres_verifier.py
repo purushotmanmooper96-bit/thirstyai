@@ -15,3 +15,8 @@ class AnalysisQueries(unittest.TestCase):
   root=Path(__file__).resolve().parents[1]
   self.assertEqual(len(analysis_statements((root/'sql/analysis.sql').read_text(encoding='utf-8'))),5)
   with self.assertRaises(ValueError):analysis_statements('DELETE FROM sources;')
+
+class DuplicateFirstColumn(unittest.TestCase):
+ def test_full_rows_match_without_order_assumption(self):
+  self.assertTrue(compare_rows([('same',1),('same',2)],[('same',2),('same',1)]))
+  self.assertFalse(compare_rows([('same',1),('same',1)],[('same',2),('same',1)]))

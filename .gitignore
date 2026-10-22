@@ -7,3 +7,7 @@ node_modules/
 *.sqlite
 .pytest_cache/
 .openai/*.local.*
+
+.ci-tools/
+outputs/lighthouse-*.log
+outputs/lighthouse-*.report.*

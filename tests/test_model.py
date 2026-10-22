@@ -53,3 +53,16 @@ class EvidenceTests(unittest.TestCase):
   self.assertTrue(all(c['source_id'] in sources and c['locator'] and c['caveat'] for c in claims))
 
 if __name__=='__main__':unittest.main()
+
+class ExtremeInputs(unittest.TestCase):
+ def test_finite_inputs_cannot_overflow_outputs(self):
+  for inputs in [Inputs(it_mwh=1e308),Inputs(pue=1e308),Inputs(wue=1e308),Inputs(grid_l_kwh=1e308),Inputs(carbon_kg_kwh=1e308),Inputs(it_mwh=10**1000)]:
+   with self.subTest(inputs=inputs),self.assertRaises(ValueError):calculate(inputs)
+ def test_projection_validates_original_inputs_before_zeroing(self):
+  with self.assertRaises(ValueError):project(Inputs(it_mwh=-1),0,1,2030)
+ def test_invalid_year_types_and_overflow(self):
+  for year,base in [(2030,True),(2030,2025.5),(True,0),(10**5,2025)]:
+   with self.subTest(year=year,base=base),self.assertRaises(ValueError):project(Inputs(),1,0,year,base)
+ def test_capacity_and_comparison_overflow(self):
+  with self.assertRaises(ValueError):capacity_energy(1e308,1,1000)
+  with self.assertRaises(ValueError):compare(Inputs(wue=1e-300,grid_l_kwh=0),Inputs(wue=1e300,grid_l_kwh=0))

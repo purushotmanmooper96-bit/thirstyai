@@ -11,8 +11,15 @@ def equivalent(left,right):
  if len(left)!=len(right):return False
  return all((math.isclose(a,b,rel_tol=1e-10,abs_tol=1e-6) if isinstance(a,(float,int)) and isinstance(b,(float,int)) else a==b) for a,b in zip(left,right))
 def compare_rows(expected,actual):
- # Stable primary-key first-column ordering; identical schemas required separately.
- return len(expected)==len(actual) and all(equivalent(a,b) for a,b in zip(sorted(expected,key=lambda r:str(r[0])),sorted(actual,key=lambda r:str(r[0]))))
+ # Match complete rows; repeated first-column values must not depend on row order.
+ if len(expected)!=len(actual):return False
+ unmatched=list(actual)
+ for row in expected:
+  for index,candidate in enumerate(unmatched):
+   if equivalent(row,candidate):unmatched.pop(index);break
+  else:return False
+ return True
+
 def analysis_statements(text):
  clean='\n'.join(line for line in text.splitlines() if not line.lstrip().startswith('--'))
  statements=[part.strip() for part in clean.split(';') if part.strip()]
@@ -29,10 +36,9 @@ def main():
   if args.load:
    pg.execute((ROOT/'sql/postgresql_schema.sql').read_text(encoding='utf-8'))
    for table in reversed(TABLES):pg.execute('DELETE FROM '+table)
-   for table in TABLES:
-    rows=local.execute('SELECT * FROM '+table).fetchall()
-    if rows:
-     with pg.cursor() as cursor:cursor.executemany('INSERT INTO '+table+' VALUES ('+','.join(['%s']*len(rows[0]))+')',rows)
+   # Exercise the exact seed files documented for pgAdmin, not a bypass via SQLite copying.
+   for filename in ('sources_seed.sql','seed.sql','scenario_seed.sql','company_seed.sql'):
+    pg.execute((ROOT/'sql'/filename).read_text(encoding='utf-8'))
   failed=False
   for view in VIEWS:
    cursor=local.execute('SELECT * FROM '+view);expected=cursor.fetchall();cols=[x[0] for x in cursor.description]

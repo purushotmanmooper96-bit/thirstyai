@@ -15,6 +15,8 @@ jobs:
         with:
           node-version: '22'
       - run: python scripts/reproduce.py
+      - name: Check generated snapshots match the checkout
+        run: git diff --exit-code -- data/processed dist docs sql outputs/build_manifest.json outputs/scenarios.csv
   postgres:
     runs-on: ubuntu-latest
     services:
@@ -47,15 +49,22 @@ jobs:
       - run: python scripts/verify_postgres.py --load
   lighthouse:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: python3 -m http.server 8765 --directory dist > /tmp/thirstyai-http.log 2>&1 &
-      - run: npx --yes lighthouse@12.8.2 http://localhost:8765/ --chrome-flags="--headless --no-sandbox" --output=json --output=html --output-path=./outputs/lighthouse-mobile --quiet
-      - run: npx --yes lighthouse@12.8.2 http://localhost:8765/ --preset=desktop --chrome-flags="--headless --no-sandbox" --output=json --output=html --output-path=./outputs/lighthouse-desktop --quiet
+      - name: Install pinned audit CLI
+        run: npm install --prefix .ci-tools --no-package-lock --no-save lighthouse@12.8.2
+      - name: Audit with explicit Chrome readiness and bounded processes
+        run: python scripts/audit_site.py --lighthouse-cli .ci-tools/node_modules/lighthouse/cli/index.js
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: lighthouse-reports
           path: outputs/lighthouse-*
+          if-no-files-found: warn

@@ -124,3 +124,7 @@ Get-Content docs/validation_v02.md
 ```
 
 Use docs/verify_postgres_windows.md for private environment-variable setup; never paste a password in an issue. Five bounded contribution tasks: GitHub issues #1–#5, all labelled good first issue.
+
+## Follow-up repository review
+
+The failure email identified an intermittent Chrome/Lighthouse startup error in run 39771985828; data/Windows/Linux/PostgreSQL jobs passed there. A later green run did not fix that startup weakness. See [ci_recheck.md](ci_recheck.md) for the bounded explicit-port audit runner and additional defects fixed in overflow handling, source-review coverage, generated-file stability, seed execution and package versioning. The expanded local suite is 48 Python tests and six JavaScript tests plus repository/notebook/parity checks. The five planned contribution issues remain open honestly. Earlier numerical evidence and native-application limitations are unchanged.

@@ -86,7 +86,7 @@ def main():
     if 'CGWB25' in texts:
         rows=extract_india(texts['CGWB25']); dest=ROOT/'data/processed/india_groundwater_2025.csv'
         with dest.open('w',newline='',encoding='utf-8') as f:
-            writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+            writer=csv.DictWriter(f,lineterminator='\n',fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
     failures=[p['source_id'] for p in provenance if p['status']=='fetch_failed']
     if failures: raise SystemExit('Some downloads failed: '+', '.join(failures))
 

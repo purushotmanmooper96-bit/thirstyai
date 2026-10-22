@@ -19,6 +19,6 @@ def main():
  with (ROOT/'data/processed/regional_water_stress.csv').open(encoding='utf-8') as f:regions=list(csv.DictReader(f))
  rows=overlay(locations,regions)
  with (ROOT/'data/processed/location_stress_overlay.csv').open('w',newline='',encoding='utf-8') as f:
-  w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+  w=csv.DictWriter(f,lineterminator='\n',fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
  print(f'{len(rows)} regional-context matches; zero verified facility/basin stress joins.')
 if __name__=='__main__':main()

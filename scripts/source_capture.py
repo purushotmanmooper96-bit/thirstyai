@@ -4,6 +4,8 @@ from datetime import datetime,timezone
 import urllib.request,hashlib,json
 ROOT=Path(__file__).resolve().parents[1]
 def capture(source, local_bytes=None):
+ if source.get('human_reviewed') is not True or not source.get('review_note'):
+  raise ValueError('Explicit human_reviewed=True and a locator review_note are required before capture')
  if local_bytes is None:
   with urllib.request.urlopen(urllib.request.Request(source['url'],headers={'User-Agent':'ThirstyAI Research/0.2'}),timeout=60) as response:raw=response.read()
  else:raw=local_bytes

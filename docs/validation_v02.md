@@ -13,3 +13,7 @@ This document supplements the historical v0.1 limitations file; that file is not
 Never use a passing SQLite run as evidence that PostgreSQL passed, or cached spreadsheet values as Excel Desktop recalculation evidence.
 
 Reproduction CI on commit `882b7209b87cc2aa73ef4cf8248c4bb067290bca` passed on ubuntu-latest and windows-latest (run 39758457275). UTF-8 file handling fixed a failure in the first Windows run. Lighthouse and mobile results: [site QA](site_qa.md).
+
+## Follow-up prompted by the failure email
+
+[CI and complete-checkout recheck](ci_recheck.md) records the Chrome startup failure, robustness fixes, expanded 48-Python / six-JavaScript suite, seed-file verification, notebook/syntax/link checks and byte-stable rebuild. Historical red runs remain visible. Five open contribution issues are deliberately unfinished tasks, not proof of five broken features.
