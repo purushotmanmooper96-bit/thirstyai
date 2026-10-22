@@ -22,7 +22,7 @@ jobs:
         shell: powershell
         run: .\scripts\verify_excel.ps1 -SelfTest
       - name: Check generated snapshots match the checkout
-        run: git diff --exit-code -- data/processed dist docs sql outputs/build_manifest.json outputs/scenarios.csv
+        run: git diff --exit-code -- data/processed dist docs sql outputs/build_manifest.json outputs/scenarios.csv outputs/powerbi bi/ThirstyAI_Data.m
   postgres:
     runs-on: ubuntu-latest
     services:
