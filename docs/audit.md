@@ -67,8 +67,8 @@ All location rows are company-reported operational aggregates, not AI-only obser
 
 ## What passed
 
-- Local full rebuild: 34 Python tests, five Node tests; SQLite integrity and semantic guards; all three implementations agree across 30 deterministic Python/JavaScript cases, plus SQL scenario checks.
-- Windows/Linux reproduction and PostgreSQL 16 server parity passed on GitHub run 39758457275, commit 882b7209b87cc2aa73ef4cf8248c4bb067290bca. PostgreSQL compared every column in all three views (36 groundwater, two scenario and 16 company rows). The later source-refresh guard has its own local test and will be checked in the final CI run.
+- Local full rebuild: 35 Python tests, five Node tests; SQLite integrity and semantic guards; all three implementations agree across 30 deterministic Python/JavaScript cases, plus SQL scenario checks.
+- Windows/Linux reproduction and PostgreSQL 16 server parity passed on GitHub run 39758457275, commit 882b7209b87cc2aa73ef4cf8248c4bb067290bca. PostgreSQL compared every column in all three views (36 groundwater, two scenario and 16 company rows). The later source-refresh guard and execution of the five read-only analysis queries have local regression tests and will be checked in the final CI run.
 - Public root site and legacy hash redirect verified in browser. Company view, equal-workload recalculation and keyboard slider operation checked. Static HTML is tested for evidence content, sources, limits and fallback anchors.
 - Mobile viewport 390 × 844 checked; no page-wide horizontal overflow. Sampled contrast pairs exceed 4.5:1. Lighthouse lab scores, profile, version and caveats: docs/site_qa.md and outputs/lighthouse_summary.json. These are neither physical-phone testing nor full WCAG certification.
 

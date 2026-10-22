@@ -30,6 +30,7 @@ test_stage_not_recomputed_from_rounded_volumes (test_model.EvidenceTests.test_st
 test_duplicate_region_rejected (test_overlay.OverlayTests.test_duplicate_region_rejected) ... ok
 test_overlay_uses_only_exact_named_regions (test_overlay.OverlayTests.test_overlay_uses_only_exact_named_regions) ... ok
 test_unmatched_is_not_assigned_safe (test_overlay.OverlayTests.test_unmatched_is_not_assigned_safe) ... ok
+test_checked_in_queries_are_read_only (test_postgres_verifier.AnalysisQueries.test_checked_in_queries_are_read_only) ... ok
 test_mismatch_is_failure (test_postgres_verifier.PostgresComparison.test_mismatch_is_failure) ... ok
 test_order_and_tolerance (test_postgres_verifier.PostgresComparison.test_order_and_tolerance) ... ok
 test_changed_bytes_require_review_even_if_anchor_matches (test_source_refresh.RefreshReview.test_changed_bytes_require_review_even_if_anchor_matches) ... ok
@@ -41,14 +42,14 @@ ResourceWarning: Enable tracemalloc to get the object allocation traceback
 ok
 
 ----------------------------------------------------------------------
-Ran 34 tests in 0.012s
+Ran 35 tests in 0.010s
 
 OK
-✔ accounting dimensions (1.074832ms)
-✔ semantic guards (0.432563ms)
-✔ tradeoff and break-even (0.531142ms)
-✔ zero baseline and equal workload (0.275727ms)
-✔ conditional futures (0.393775ms)
+✔ accounting dimensions (1.467776ms)
+✔ semantic guards (0.316969ms)
+✔ tradeoff and break-even (0.312892ms)
+✔ zero baseline and equal workload (0.667908ms)
+✔ conditional futures (0.228685ms)
 ℹ tests 5
 ℹ suites 0
 ℹ pass 5
@@ -56,6 +57,6 @@ OK
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 99.573079
+ℹ duration_ms 96.945708
 Integration passed: SQLite integrity + semantic guard; SQL/Python parity; 30 Python/JS parity cases; evidence coverage.
 Rebuild complete. Start the app: python -m http.server 8000 --directory dist

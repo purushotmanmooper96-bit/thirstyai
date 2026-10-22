@@ -13,6 +13,13 @@ def equivalent(left,right):
 def compare_rows(expected,actual):
  # Stable primary-key first-column ordering; identical schemas required separately.
  return len(expected)==len(actual) and all(equivalent(a,b) for a,b in zip(sorted(expected,key=lambda r:str(r[0])),sorted(actual,key=lambda r:str(r[0]))))
+def analysis_statements(text):
+ clean='\n'.join(line for line in text.splitlines() if not line.lstrip().startswith('--'))
+ statements=[part.strip() for part in clean.split(';') if part.strip()]
+ if any(not statement.upper().startswith('SELECT ') for statement in statements):
+  raise ValueError('Only the checked-in SELECT analysis queries are supported')
+ return statements
+
 def main():
  parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--load',action='store_true');args=parser.parse_args()
  if os.environ.get('PGDATABASE')!='thirstyai_db':raise SystemExit('Set PGDATABASE=thirstyai_db. No other database will be modified.')
@@ -32,6 +39,10 @@ def main():
    actual=pg.execute('SELECT * FROM '+view)
    passed=cols==[x.name for x in actual.description] and compare_rows(expected,actual.fetchall())
    print(('PASS' if passed else 'FAIL')+' '+view+f' ({len(expected)} expected rows)');failed|=not passed
+  for index,statement in enumerate(analysis_statements((ROOT/'sql/analysis.sql').read_text(encoding='utf-8')),1):
+   expected=local.execute(statement).fetchall();actual=pg.execute(statement).fetchall()
+   passed=compare_rows(expected,actual)
+   print(('PASS' if passed else 'FAIL')+f' analysis query {index} ({len(expected)} expected rows)');failed|=not passed
   if failed:raise SystemExit(1)
  print('PASS PostgreSQL / SQLite parity; SQLite scenarios also checked against Python by reproduce.py')
 if __name__=='__main__':

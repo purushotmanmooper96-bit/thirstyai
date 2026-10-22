@@ -6,7 +6,7 @@ Prerequisites: install PostgreSQL with pgAdmin, Python 3.12 and Node 22. Keep th
 2. Right-click **Databases → Create → Database**. Database: `thirstyai_db`. Owner: your PostgreSQL role (often `postgres`). Click **Save**. Use a dedicated project database.
 3. Select `thirstyai_db`, right-click **Query Tool**. Click **Open File**, select `sql/postgresql_schema.sql`, then **Execute/Refresh** (F5).
 4. In the same database, open and execute these files in order: `sql/sources_seed.sql`, `sql/seed.sql`, `sql/scenario_seed.sql`, `sql/company_seed.sql`. These are inserts for a fresh database; do not repeat them on populated tables. The verifier below provides a repeatable transactional reload.
-5. Execute `sql/queries.sql` if present, then run:
+5. Execute `sql/analysis.sql`, then run:
 
 ```sql
 SELECT version();
