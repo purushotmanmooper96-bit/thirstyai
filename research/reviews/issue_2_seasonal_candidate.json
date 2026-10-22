@@ -1,0 +1,18 @@
+{
+  "issue": 2,
+  "candidate_title": "City of The Dalles seasonal water supply monitoring update",
+  "publisher": "City of The Dalles",
+  "url": "https://www.thedalles.org/news_detail_T4_R275.php",
+  "publication_date": "2026-10-13",
+  "retrieved_at": "2026-10-22T12:05:22.524250+00:00",
+  "sha256": "73d687df070a44590134e3b6c2336e1d3874e2aee57718edc286ff5ca641e825",
+  "bytes": 99238,
+  "locator": "WATER DEMAND AND SYSTEM USAGE; MONTHLY SNAPSHOT; DROUGHT & WATERSHED CONDITIONS; WHO THIS INFORMATION APPLIES TO",
+  "review_status": "Reviewed HTML; linked monthly graph download returned HTTP 403 and was not verified",
+  "boundary": "Entire municipal water-utility service area, all customers. No named data-centre-only monthly series located.",
+  "water_metric": "City water use/supply context; no facility consumption/withdrawal definition established",
+  "licence": "Publisher copyright; link and attributed summary only; raw page and graph excluded from repository",
+  "confidence": "High for reviewed page scope; facility-level candidate UNVERIFIED / not qualified",
+  "headline_eligible": false,
+  "outcome": "Research note added, but the issue remains open because municipal seasonal context is not a named facility monthly/drought-period water record."
+}

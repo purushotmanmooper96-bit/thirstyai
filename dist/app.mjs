@@ -1,5 +1,7 @@
+import {bindSkipLink} from './navigation.mjs';
 import {calculate,compare,breakEvenGrid,project,DEFAULTS,ALTERNATIVE} from './model.mjs';
 const main=document.querySelector('main'),nav=document.querySelector('#nav');
+bindSkipLink(document.querySelector('.skip'),main);
 const icons={overview:'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',lab:'M9 3v6l-5 10a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 9V3 M7 3h10 M7 15h10',india:'M12 3c-4 0-7 3-7 7 0 5 7 11 7 11s7-6 7-11c0-4-3-7-7-7Z M9 10a3 3 0 1 0 6 0 3 3 0 1 0-6 0',futures:'M3 19V5 M3 19h18 M6 15l5-5 4 3 6-8',evidence:'M5 3h11l4 4v14H5z M15 3v5h5 M8 12h9 M8 16h6',solutions:'M12 3v3 M4 6l2 2 M20 6l-2 2 M9 18h6 M10 21h4 M8 14a6 6 0 1 1 8 0c-1 1-1 2-1 4H9c0-2 0-3-1-4'};
 const pages=[['overview','Overview'],['lab','Decision lab'],['companies','Company reporting'],['locations','Location context'],['india','India observatory'],['futures','Future scenarios'],['evidence','Evidence & methods'],['solutions','Solutions playbook']];
 nav.innerHTML=pages.map(([id,t])=>`<a href="#${id}" data-page="${id}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${icons[id]??icons.evidence}"/></svg>${t}${id==='india'?'<span class="nav-count">36</span>':''}</a>`).join('');
