@@ -15,6 +15,10 @@ jobs:
         with:
           node-version: '22'
       - run: python scripts/reproduce.py
+      - name: Test Excel verifier without claiming native Excel validation
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: .\scripts\verify_excel.ps1 -SelfTest
       - name: Check generated snapshots match the checkout
         run: git diff --exit-code -- data/processed dist docs sql outputs/build_manifest.json outputs/scenarios.csv
   postgres:
