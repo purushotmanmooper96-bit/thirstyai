@@ -1,7 +1,84 @@
-export function finite(value,name,min=0,max=Infinity){if(typeof value!=='number'||!Number.isFinite(value)||value<min||value>max)throw new Error(`${name} must be finite and between ${min} and ${max}`);return value;}
-export function calculate(x){finite(x.it_mwh,'IT MWh');finite(x.pue,'PUE',1);for(const k of ['wue','grid_l_kwh','carbon_kg_kwh'])finite(x[k],k);if(x.water_metric!=='consumption')throw new Error('Withdrawal WUE cannot enter consumption');if(x.wue_denominator!=='IT_kWh')throw new Error('WUE must use IT kWh');if(x.includes_indirect!==false)throw new Error('WUE must exclude indirect water');const energy=x.it_mwh*1000*x.pue,direct=x.it_mwh*1000*x.wue,indirect=energy*x.grid_l_kwh;const result={it_mwh:x.it_mwh,facility_mwh:energy/1000,direct_l:direct,indirect_l:indirect,total_l:direct+indirect,carbon_kg:energy*x.carbon_kg_kwh,intensity_l_kwh_it:x.wue+x.pue*x.grid_l_kwh,evidence_type:'illustrative_scenario',boundary:'operational consumption; manufacturing excluded'};for(const [key,value] of Object.entries(result))if(typeof value==='number')finite(value,key);return result;}
-export function compare(b,a){if(b.it_mwh!==a.it_mwh)throw new Error('Use identical IT workload');const baseline=calculate(b),alternative=calculate(a);const result={baseline,alternative,water_saved_l:baseline.total_l-alternative.total_l,water_saved_pct:baseline.total_l===0?null:100*(1-alternative.total_l/baseline.total_l),energy_change_mwh:alternative.facility_mwh-baseline.facility_mwh};for(const key of ['water_saved_l','water_saved_pct','energy_change_mwh'])if(result[key]!==null)finite(result[key],key,-Infinity);return result;}
-export function breakEvenGrid(b,a){calculate(b);calculate(a);return a.pue===b.pue?null:finite((b.wue-a.wue)/(a.pue-b.pue),'break-even factor',-Infinity);}
-export function project(x,g,e,year,base=2025){calculate(x);finite(g,'demand growth',0,1);finite(e,'efficiency gain',0,1);if(!Number.isInteger(base)||!Number.isInteger(year)||year<base)throw new Error('Invalid year');return calculate({...x,it_mwh:x.it_mwh*((1+g)*(1-e))**(year-base)});}
-export const DEFAULTS={it_mwh:1000,pue:1.2,wue:1,grid_l_kwh:1,carbon_kg_kwh:0.4,water_metric:'consumption',wue_denominator:'IT_kWh',includes_indirect:false};
-export const ALTERNATIVE={...DEFAULTS,pue:1.4,wue:0.1};
+export function finite(value, name, min = 0, max = Infinity) {
+  if (
+    typeof value !== "number" ||
+    !Number.isFinite(value) ||
+    value < min ||
+    value > max
+  )
+    throw new Error(`${name} must be finite and between ${min} and ${max}`);
+  return value;
+}
+export function calculate(x) {
+  finite(x.it_mwh, "IT MWh");
+  finite(x.pue, "PUE", 1);
+  for (const k of ["wue", "grid_l_kwh", "carbon_kg_kwh"]) finite(x[k], k);
+  if (x.water_metric !== "consumption")
+    throw new Error("Withdrawal WUE cannot enter consumption");
+  if (x.wue_denominator !== "IT_kWh") throw new Error("WUE must use IT kWh");
+  if (x.includes_indirect !== false)
+    throw new Error("WUE must exclude indirect water");
+  const energy = x.it_mwh * 1000 * x.pue,
+    direct = x.it_mwh * 1000 * x.wue,
+    indirect = energy * x.grid_l_kwh;
+  const result = {
+    it_mwh: x.it_mwh,
+    facility_mwh: energy / 1000,
+    direct_l: direct,
+    indirect_l: indirect,
+    total_l: direct + indirect,
+    carbon_kg: energy * x.carbon_kg_kwh,
+    intensity_l_kwh_it: x.wue + x.pue * x.grid_l_kwh,
+    evidence_type: "illustrative_scenario",
+    boundary: "operational consumption; manufacturing excluded",
+  };
+  for (const [key, value] of Object.entries(result))
+    if (typeof value === "number") finite(value, key);
+  return result;
+}
+export function compare(b, a) {
+  if (b.it_mwh !== a.it_mwh) throw new Error("Use identical IT workload");
+  const baseline = calculate(b),
+    alternative = calculate(a);
+  const result = {
+    baseline,
+    alternative,
+    water_saved_l: baseline.total_l - alternative.total_l,
+    water_saved_pct:
+      baseline.total_l === 0
+        ? null
+        : 100 * (1 - alternative.total_l / baseline.total_l),
+    energy_change_mwh: alternative.facility_mwh - baseline.facility_mwh,
+  };
+  for (const key of ["water_saved_l", "water_saved_pct", "energy_change_mwh"])
+    if (result[key] !== null) finite(result[key], key, -Infinity);
+  return result;
+}
+export function breakEvenGrid(b, a) {
+  calculate(b);
+  calculate(a);
+  return a.pue === b.pue
+    ? null
+    : finite((b.wue - a.wue) / (a.pue - b.pue), "break-even factor", -Infinity);
+}
+export function project(x, g, e, year, base = 2025) {
+  calculate(x);
+  finite(g, "demand growth", 0, 1);
+  finite(e, "efficiency gain", 0, 1);
+  if (!Number.isInteger(base) || !Number.isInteger(year) || year < base)
+    throw new Error("Invalid year");
+  return calculate({
+    ...x,
+    it_mwh: x.it_mwh * ((1 + g) * (1 - e)) ** (year - base),
+  });
+}
+export const DEFAULTS = {
+  it_mwh: 1000,
+  pue: 1.2,
+  wue: 1,
+  grid_l_kwh: 1,
+  carbon_kg_kwh: 0.4,
+  water_metric: "consumption",
+  wue_denominator: "IT_kWh",
+  includes_indirect: false,
+};
+export const ALTERNATIVE = { ...DEFAULTS, pue: 1.4, wue: 0.1 };

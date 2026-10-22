@@ -1,4 +1,6 @@
-# v0.2 validation record
+# Historical v0.2 validation record
+
+For current status, see [validation_current.md](validation_current.md).
 
 This document supplements the historical v0.1 limitations file; that file is not silently upgraded before author confirmation.
 
@@ -16,4 +18,4 @@ Reproduction CI on commit `882b7209b87cc2aa73ef4cf8248c4bb067290bca` passed on u
 
 ## Follow-up prompted by the failure email
 
-[CI and complete-checkout recheck](ci_recheck.md) records the Chrome startup failure, robustness fixes, expanded 48-Python / six-JavaScript suite, seed-file verification, notebook/syntax/link checks and byte-stable rebuild. Historical red runs remain visible. Five open contribution issues are deliberately unfinished tasks, not proof of five broken features.
+[CI and complete-checkout recheck](ci_recheck.md) records the Chrome startup failure, robustness fixes, expanded 48-Python / six-JavaScript suite, seed-file verification, notebook/syntax/link checks and byte-stable rebuild. Historical red runs remain visible. The issue count at that historical checkpoint is not current validation evidence.

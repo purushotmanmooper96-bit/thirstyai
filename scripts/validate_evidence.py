@@ -1,6 +1,9 @@
 """Fail closed before publishing source-linked evidence, including location overlays."""
 from datetime import datetime,timedelta
-import math,re
+import math,re,json
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+from urllib.parse import urlsplit
 
 def validate_registry(sources,provenance):
  ids=[s['id'] for s in sources];captures={p['source_id']:p for p in provenance}
@@ -8,12 +11,19 @@ def validate_registry(sources,provenance):
  if len(captures)!=len(provenance):raise ValueError('Duplicate source capture')
  for source in sources:
   ident=source['id'];record=captures.get(ident,{})
+  url=urlsplit(source.get('url',''))
+  if url.scheme not in ('https','http') or not url.hostname or url.username or url.password:raise ValueError('Unsafe source URL: '+ident)
   if record.get('status')!='fetched_anchor_checked':raise ValueError('Source requires retrieval / human locator review: '+ident)
   if record.get('url')!=source['url']:raise ValueError('Provenance URL mismatch: '+ident)
   if not re.fullmatch('[a-f0-9]{64}',record.get('sha256','')):raise ValueError('Invalid SHA-256: '+ident)
   try:stamp=datetime.fromisoformat(record['retrieved_at'].replace('Z','+00:00'))
   except (KeyError,ValueError,TypeError) as exc:raise ValueError('Invalid retrieval timestamp: '+ident) from exc
   if stamp.tzinfo is None or stamp.utcoffset()!=timedelta(0):raise ValueError('Retrieval timestamp must be UTC: '+ident)
+  if record.get('review_record'):
+   review_path=(ROOT/record['review_record']).resolve()
+   if not review_path.is_relative_to((ROOT/'research/reviews').resolve()):raise ValueError('Unsafe review path: '+ident)
+   review=json.loads(review_path.read_text(encoding='utf-8'))
+   if any(review.get(k)!=v for k,v in {'source_id':ident,'sha256':record['sha256'],'url':source['url'],'locator':source['locator'],'scope':source['scope']}.items()) or not review.get('reviewer') or not review.get('note'):raise ValueError('Review/capture binding mismatch: '+ident)
   if not record.get('bytes',0)>0 or not source.get('locator') or not source.get('licence'):raise ValueError('Incomplete source metadata: '+ident)
  return set(ids)
 def validate_facts(rows,source_ids,value_key='value',nullable=False):

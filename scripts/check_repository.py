@@ -12,6 +12,8 @@ def main():
   if not match:raise ValueError('Missing version in '+name)
   versions.append(match.group(1))
  if len(set(versions))!=1:raise ValueError('Package / citation versions differ: '+str(versions))
+ model_text=(ROOT/'dist/scenario.mjs').read_text(encoding='utf-8')
+ if __version__ not in model_text:raise ValueError('Browser share model version differs')
  for folder in ('scripts','src','tests'):
   for path in (ROOT/folder).rglob('*.py'):ast.parse(path.read_text(encoding='utf-8'),filename=str(path))
  for path in ROOT.rglob('*.md'):
@@ -20,7 +22,7 @@ def main():
    if target.startswith(('http:','https:','mailto:','#','<')):continue
    relative=unquote(target.split('#')[0])
    if relative and not (path.parent/relative).exists():raise ValueError(f'Broken local link in {path.relative_to(ROOT)}: {target}')
- for filename in ('dist/app.mjs','dist/model.mjs','dist/navigation.mjs','scripts/build_workbook.mjs'):
+ for filename in [str(p.relative_to(ROOT)) for p in (ROOT/'dist').glob('*.mjs')]+['scripts/build_workbook.mjs']:
   subprocess.run(['node','--check',filename],cwd=ROOT,check=True,timeout=15)
  for path in (ROOT/'notebooks').glob('*.ipynb'):
   notebook=json.loads(path.read_text(encoding='utf-8'));namespace={'__name__':'__main__'}

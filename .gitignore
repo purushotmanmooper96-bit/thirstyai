@@ -12,3 +12,5 @@ node_modules/
 outputs/lighthouse-*.log
 outputs/lighthouse-*.report.*
 outputs/excel-validation/
+
+outputs/browser/

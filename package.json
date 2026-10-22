@@ -1,10 +1,10 @@
 {
   "name": "thirstyai",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/model.test.mjs tests/navigation.test.mjs",
+    "test": "node --test tests/model.test.mjs tests/navigation.test.mjs tests/scenario.test.mjs",
     "build": "python scripts/build.py"
   }
 }
