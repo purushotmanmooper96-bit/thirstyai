@@ -5,7 +5,7 @@ param([switch]$SelfTest)
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 $root = Split-Path $PSScriptRoot -Parent
-$cases = @(Get-Content (Join-Path $root 'tests/fixtures/excel_cases.json') -Raw | ConvertFrom-Json)
+$cases = Get-Content (Join-Path $root 'tests/fixtures/excel_cases.json') -Raw | ConvertFrom-Json
 
 function Test-Outputs($Actual, $Expected) {
     if (@($Actual).Count -ne @($Expected).Count) { return $false }
