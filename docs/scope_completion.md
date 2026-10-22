@@ -32,7 +32,7 @@ Verified: source opened and candidate metadata captured; registered source/claim
 
 Files: [PostgreSQL Windows guide](verify_postgres_windows.md), `scripts/verify_postgres.py`, [Power BI import](../bi/IMPORT_WINDOWS.md), [Power BI build](../bi/BUILD_WINDOWS.md), `bi/ThirstyAI_Data.m`, `scripts/build_bi_pack.py`, `tests/test_bi_pack.py`, [Excel checklist](excel_validation.md), `scripts/verify_excel.ps1`.
 
-Verified: prepared data handoff, boundaries and source keys in automated tests. **Still required:** actual Excel Desktop recalculation; Power BI Desktop M/DAX/refresh/visual checks and saved report; the author's Windows PostgreSQL setup. The original instruction explicitly assigns PBIX authoring/screenshots to the author. No installed native applications are available in this execution environment. [Return actual evidence using this checklist](desktop_signoff.md); historical `limitations.md` stays unchanged until confirmation.
+Verified: prepared data handoff, boundaries and source keys in automated tests. Excel Desktop recalculation and visual checks passed in the author-supplied run ([evidence](validation/excel-2026-10-22/README.md)). **Still required:** Power BI Desktop M/DAX/refresh/visual checks and saved report; the author's Windows PostgreSQL setup. The original instruction explicitly assigns PBIX authoring/screenshots to the author. No installed native applications are available in this execution environment. [Return actual evidence using this checklist](desktop_signoff.md); historical `limitations.md` stays unchanged until confirmation.
 
 PowerShell:
 
@@ -63,7 +63,7 @@ Verified: release browser tests and live checks, local layout and lab scores. Un
 
 ## Task 7 — Repository and launch preparation
 
-**Delivered:** topics, CI/licence/Python badges, changelog, release notes/commands, five contribution issues, published v0.2.1 release, product/growth audit, two built-in sharing mechanics and a seven-day distribution playbook. #1–#4 are completed; #5 remains open because native Excel evidence is missing. The launch drafts retain limitations. HN must be written personally under its rules, so the old AI-written draft has been removed.
+**Delivered:** topics, CI/licence/Python badges, changelog, release notes/commands, five contribution issues, published v0.2.1 release, product/growth audit, two built-in sharing mechanics and a seven-day distribution playbook. #1–#4 are completed; #5 is completed following the author-supplied native Excel report and visual checks; see [current validation](validation_current.md). The launch drafts retain limitations. HN must be written personally under its rules, so the old AI-written draft has been removed.
 
 Files: `CHANGELOG.md`, [release](RELEASE_v0.2.1.md), [launch drafts](launch_v02.md), [seven-day product/growth playbook](product_growth_audit_2026-10-22.md), [implementation map](implementation_2026-10-22.md).
 

@@ -1,3 +1,4 @@
+from contextlib import closing
 """Integration checks: source lineage, SQL/Python/JS parity, geometry-free coverage."""
 from pathlib import Path
 import json,sys,sqlite3,subprocess,random
@@ -5,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
 from thirstyai.model import Inputs,calculate
 
 def main():
- with sqlite3.connect(ROOT/'outputs/thirstyai.sqlite') as c:
+ with closing(sqlite3.connect(ROOT/'outputs/thirstyai.sqlite')) as c, c:
   assert c.execute('SELECT COUNT(*) FROM groundwater').fetchone()[0]==36
   for name,pue,wue in [('Baseline',1.2,1),('Alternative',1.4,.1)]:
    sql=c.execute('SELECT total_l FROM vw_scenarios WHERE scenario_id=?',(name,)).fetchone()[0]

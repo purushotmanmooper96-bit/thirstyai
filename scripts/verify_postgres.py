@@ -1,3 +1,4 @@
+from contextlib import closing
 """Execute PostgreSQL schema and compare every view to the reproduced SQLite database.
 Requires psycopg 3; standard PG* environment variables; never prints credentials.
 --load replaces only ThirstyAI tables inside thirstyai_db, in one transaction.
@@ -32,7 +33,7 @@ def main():
  if os.environ.get('PGDATABASE')!='thirstyai_db':raise SystemExit('Set PGDATABASE=thirstyai_db. No other database will be modified.')
  try:import psycopg
  except ImportError:raise SystemExit('Install optional driver: python -m pip install "psycopg[binary]>=3.2,<4"')
- with sqlite3.connect(ROOT/'outputs/thirstyai.sqlite') as local,psycopg.connect(connect_timeout=15) as pg:
+ with closing(sqlite3.connect(ROOT/'outputs/thirstyai.sqlite')) as local,psycopg.connect(connect_timeout=15) as pg:
   if args.load:
    pg.execute((ROOT/'sql/postgresql_schema.sql').read_text(encoding='utf-8'))
    for table in reversed(TABLES):pg.execute('DELETE FROM '+table)

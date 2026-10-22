@@ -1,0 +1,242 @@
+{
+    "status":  "PASS",
+    "engine":  "Microsoft Excel Desktop COM",
+    "utc":  "2026-10-22T17:32:33.2314445Z",
+    "workbook_sha256":  "af0e8034bd4cf8932b3da16904c6767245aef216540d90fa8d54912aff8b7809",
+    "os_version":  "Microsoft Windows NT 10.0.26300.0",
+    "excel_version":  "16.0",
+    "excel_build":  "20430",
+    "automatic_calculation":  true,
+    "cases":  [
+                  {
+                      "name":  "Baseline",
+                      "inputs":  [
+                                     1000,
+                                     1.2,
+                                     1,
+                                     1,
+                                     0.4
+                                 ],
+                      "expected":  [
+                                       1200,
+                                       1000000,
+                                       1200000,
+                                       2200000,
+                                       480000
+                                   ],
+                      "actual":  [
+                                     1200,
+                                     1000000,
+                                     1200000,
+                                     2200000,
+                                     480000
+                                 ],
+                      "pass":  true
+                  },
+                  {
+                      "name":  "Double work",
+                      "inputs":  [
+                                     2000,
+                                     1.2,
+                                     1,
+                                     1,
+                                     0.4
+                                 ],
+                      "expected":  [
+                                       2400,
+                                       2000000,
+                                       2400000,
+                                       4400000,
+                                       960000
+                                   ],
+                      "actual":  [
+                                     2400,
+                                     2000000,
+                                     2400000,
+                                     4400000,
+                                     960000
+                                 ],
+                      "pass":  true
+                  },
+                  {
+                      "name":  "Alternative",
+                      "inputs":  [
+                                     1000,
+                                     1.4,
+                                     0.1,
+                                     1,
+                                     0.4
+                                 ],
+                      "expected":  [
+                                       1400,
+                                       100000,
+                                       1400000,
+                                       1500000,
+                                       560000
+                                   ],
+                      "actual":  [
+                                     1400,
+                                     100000,
+                                     1400000,
+                                     1500000,
+                                     560000
+                                 ],
+                      "pass":  true
+                  },
+                  {
+                      "name":  "Blank WUE",
+                      "inputs":  [
+                                     1000,
+                                     1.2,
+                                     null,
+                                     1,
+                                     0.4
+                                 ],
+                      "expected":  [
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input"
+                                   ],
+                      "actual":  [
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input"
+                                 ],
+                      "pass":  true
+                  },
+                  {
+                      "name":  "Text WUE",
+                      "inputs":  [
+                                     1000,
+                                     1.2,
+                                     "text",
+                                     1,
+                                     0.4
+                                 ],
+                      "expected":  [
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input"
+                                   ],
+                      "actual":  [
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input"
+                                 ],
+                      "pass":  true
+                  },
+                  {
+                      "name":  "PUE below one",
+                      "inputs":  [
+                                     1000,
+                                     0.9,
+                                     1,
+                                     1,
+                                     0.4
+                                 ],
+                      "expected":  [
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input"
+                                   ],
+                      "actual":  [
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input"
+                                 ],
+                      "pass":  true
+                  },
+                  {
+                      "name":  "Negative intensity",
+                      "inputs":  [
+                                     1000,
+                                     1.2,
+                                     -1,
+                                     1,
+                                     0.4
+                                 ],
+                      "expected":  [
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input",
+                                       "Invalid input"
+                                   ],
+                      "actual":  [
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input",
+                                     "Invalid input"
+                                 ],
+                      "pass":  true
+                  },
+                  {
+                      "name":  "Zero work",
+                      "inputs":  [
+                                     0,
+                                     1.2,
+                                     1,
+                                     1,
+                                     0.4
+                                 ],
+                      "expected":  [
+                                       0,
+                                       0,
+                                       0,
+                                       0,
+                                       0
+                                   ],
+                      "actual":  [
+                                     0,
+                                     0,
+                                     0,
+                                     0,
+                                     0
+                                 ],
+                      "pass":  true
+                  },
+                  {
+                      "name":  "Zero water factors",
+                      "inputs":  [
+                                     1000,
+                                     1.2,
+                                     0,
+                                     0,
+                                     0.4
+                                 ],
+                      "expected":  [
+                                       1200,
+                                       0,
+                                       0,
+                                       0,
+                                       480000
+                                   ],
+                      "actual":  [
+                                     1200,
+                                     0,
+                                     0,
+                                     0,
+                                     480000
+                                 ],
+                      "pass":  true
+                  }
+              ],
+    "reopened_baseline":  true,
+    "original_unchanged":  true,
+    "author_confirmation":  "PENDING",
+    "screenshots":  "PENDING",
+    "error":  null
+}

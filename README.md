@@ -18,6 +18,12 @@ Free to try. No account or API key. Calculations run in your browser.
 
 [Background, solutions and future outlook](docs/public_guide.md) · [Current validation](docs/validation_current.md)
 
+## A 30-second experiment
+
+**Can using less cooling water increase total water consumption?** In the illustrative lab, compare 1,000 MWh of IT work at PUE 1.2 / WUE 1.0 with PUE 1.4 / WUE 0.1. At a shared grid factor of 1 L/kWh, total operational water falls from 2.2 million to 1.5 million litres, while facility electricity rises by 200 MWh. At 6 L/kWh, the alternative instead uses 300,000 litres more. These are hypothetical scenarios, not measured savings.
+
+Share the scenario link with its assumptions, then challenge someone to find the break-even point: **4.5 L/kWh**.
+
 ## Try this first
 
 Open **Company reporting**. Pick a withdrawal figure and a consumption figure. Inspect their periods and reporting scopes before comparing them.
@@ -61,7 +67,7 @@ There is no verified global AI water total, universal litres-per-prompt number, 
 
 Company observations are self-reported; some selected metrics have limited external assurance. The lab excludes manufacturing and does not establish engineering feasibility or local scarcity impact.
 
-Power BI is a build pack, not a validated PBIX. The Excel workbook is an earlier calculator/source snapshot; native Excel confirmation is not established by its cached values or by a closed issue. [Current validation record](docs/validation_v02.md) · [Excel checks](docs/excel_validation.md).
+Power BI is a build pack, not a validated PBIX. The Excel workbook is an earlier calculator/source snapshot; its nine native Excel test cases and save/reopen passed on 22 October 2026 ([report and visual review](docs/validation/excel-2026-10-22/README.md)). This applies to the tested workbook hash. [Current validation record](docs/validation_v02.md) · [Excel checks](docs/excel_validation.md).
 
 ## Run locally
 

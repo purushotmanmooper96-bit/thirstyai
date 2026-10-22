@@ -2,7 +2,9 @@
 
 These checks require your installed Windows applications. There is no Excel or Power BI Desktop engine in the execution environment used for this repository work. Automated tests, formula caches and prepared files cannot establish that these applications recalculated or rendered correctly.
 
-## Excel — issue #5
+## Excel — issue #5 completed
+
+The author-supplied native run and visual checks passed on 22 October 2026. See [the report and review](validation/excel-2026-10-22/README.md). The commands below remain available for future workbook changes.
 
 ```powershell
 git pull --ff-only
@@ -41,4 +43,4 @@ Failures or untested steps:
 I confirm the stated PASS items were run in the named applications:
 ```
 
-Only after reviewing this evidence and your explicit confirmation should current validation and historical limitations be updated. Keep issue #5 open while native Excel evidence is missing. A prepared PBIX, if later supplied, must still be opened and refreshed; its filename is not proof of successful validation.
+Only after reviewing this evidence and your explicit confirmation should current validation and historical limitations be updated. Reopen or create a validation issue if a future workbook change fails native checks. A prepared PBIX, if later supplied, must still be opened and refreshed; its filename is not proof of successful validation.
