@@ -21,3 +21,11 @@ class EvidenceValidation(unittest.TestCase):
    with self.subTest(change=change),self.assertRaises(ValueError):validate_facts([row],{'KNOWN'})
  def test_capture_cannot_imply_unperformed_review(self):
   with self.assertRaises(ValueError):capture({'id':'UNREVIEWED'},local_bytes=b'test')
+ def test_source_url_schemes_rejected(self):
+  for url in ['javascript:alert(1)','data:text/html,test','https://user:password@example.org']:
+   sources=copy.deepcopy(self.sources);records=copy.deepcopy(self.prov)
+   sources[0]['url']=url;records[0]['url']=url
+   with self.subTest(url=url),self.assertRaises(ValueError):validate_registry(sources,records)
+ def test_capture_requires_exact_previously_reviewed_bytes(self):
+  source={'id':'TEST','human_reviewed':True,'review_note':'Table 1 checked','reviewer':'Reviewer','reviewed_sha256':'a'*64}
+  with self.assertRaises(ValueError):capture(source,local_bytes=b'changed since review')

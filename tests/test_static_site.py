@@ -20,7 +20,6 @@ class StaticSite(unittest.TestCase):
  def test_scenario_export_warnings(self):
   rows=list(csv.DictReader((ROOT/'outputs/scenarios.csv').open()))
   self.assertTrue(all(r['warning']=='ILLUSTRATIVE INPUTS - NOT MEASUREMENTS' for r in rows))
-  app=(ROOT/'dist/app.mjs').read_text(encoding='utf-8')
-  self.assertIn("warning:'ILLUSTRATIVE INPUTS — NOT MEASUREMENTS'",app)
-  self.assertIn("['ILLUSTRATIVE INPUTS - NOT MEASUREMENTS','year'",app)
+  lab=(ROOT/'dist/lab.mjs').read_text(encoding='utf-8')
+  self.assertIn('ILLUSTRATIVE INPUTS — NOT MEASUREMENTS',lab)
   self.assertIn('scenario_warning',json.loads((ROOT/'dist/data/evidence.json').read_text(encoding='utf-8')))

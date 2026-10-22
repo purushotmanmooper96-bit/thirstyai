@@ -5,6 +5,7 @@ import csv
 import hashlib
 import json
 import re
+import os
 import urllib.request
 from datetime import datetime, timezone
 
@@ -58,36 +59,42 @@ def fetch(source):
     is_pdf=data.startswith(b'%PDF')
     is_zip=data.startswith(b'PK')
     if not (is_pdf or is_zip) and source.get('anchor','').lower() not in text.lower(): raise ValueError(f"Source anchor changed: {source['id']}")
-    raw=ROOT/'data/raw'/f"{source['id']}.{'pdf' if is_pdf else 'zip' if is_zip else 'html'}"; raw.parent.mkdir(parents=True,exist_ok=True); raw.write_bytes(data)
+    digest=hashlib.sha256(data).hexdigest()
+    raw=ROOT/'data/raw/captures'/source['id']/(digest+('.pdf' if is_pdf else '.zip' if is_zip else '.html')); raw.parent.mkdir(parents=True,exist_ok=True); raw.write_bytes(data)
     prior=json.loads((ROOT/'research/provenance.json').read_text(encoding='utf-8'))
     digest=hashlib.sha256(data).hexdigest()
     reviewed=any(p.get('source_id')==source['id'] and p.get('sha256')==digest and p.get('status')=='fetched_anchor_checked' for p in prior)
     status='fetched_anchor_checked' if reviewed else 'downloaded_pending_locator_review'
     return text, {'source_id':source['id'],'url':source['url'],'retrieved_at':datetime.now(timezone.utc).isoformat(),
                   'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data),'status':status,
-                  'review_note':'Anchor checks detect drift; human locator review remains required'}
+                  'raw_path':raw.relative_to(ROOT).as_posix(),
+                  'review_note':'Anchor checks detect drift; locator review remains required'}
 
 
 def main():
     import argparse
     parser=argparse.ArgumentParser(); parser.add_argument('--refresh',action='store_true'); args=parser.parse_args()
     if not args.refresh: raise SystemExit('Use --refresh to retrieve registered public sources')
-    provenance=[]; texts={}
+    # A refresh is an immutable candidate run, never an update of reviewed evidence.
+    run=ROOT/'data/raw/refreshes'/datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+    run.mkdir(parents=True)
+    provenance=[]
     active_sources=json.loads((ROOT/'research/sources.json').read_text(encoding='utf-8'))
     for source in active_sources:
         try:
-            content, record=fetch(source); texts[source['id']]=content; provenance.append(record)
+            content,record=fetch(source)
+            if source['id']=='CGWB25':
+                rows=extract_india(content)
+                (run/'india_candidate.json').write_text(json.dumps(rows,indent=2)+'\n',encoding='utf-8')
+            provenance.append(record)
             print(source['id'],record['status'],record['bytes'])
         except Exception as exc:
             provenance.append({'source_id':source['id'],'status':'fetch_failed','error':str(exc)})
             print(source['id'],'fetch_failed',str(exc))
-    (ROOT/'research/provenance.json').write_text(json.dumps(provenance,indent=2)+'\n', encoding='utf-8')
-    (ROOT/'research/sources.json').write_text(json.dumps(active_sources,indent=2)+'\n', encoding='utf-8')
-    if 'CGWB25' in texts:
-        rows=extract_india(texts['CGWB25']); dest=ROOT/'data/processed/india_groundwater_2025.csv'
-        with dest.open('w',newline='',encoding='utf-8') as f:
-            writer=csv.DictWriter(f,lineterminator='\n',fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
+    (run/'attempt.json').write_text(json.dumps({'sources':active_sources,'captures':provenance},indent=2)+'\n',encoding='utf-8')
+    print('Candidate run:',run)
+    print('Reviewed registry and processed data unchanged. Use review_refresh.py after reviewing exact bytes/locators.')
     failures=[p['source_id'] for p in provenance if p['status']=='fetch_failed']
-    if failures: raise SystemExit('Some downloads failed: '+', '.join(failures))
+    if failures:raise SystemExit('Some downloads failed; reviewed snapshots preserved: '+', '.join(failures))
 
 if __name__=='__main__':main()

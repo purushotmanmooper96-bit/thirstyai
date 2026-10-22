@@ -523,7 +523,7 @@
       "caveat": "Curated example, not exhaustive facility inventory. No coordinate or basin guessed."
     }
   ],
-  "release": "0.2.0",
+  "release": "0.2.1",
   "reviewed": "2026-10-22",
   "coverage": {
     "india_states_uts": 36,
