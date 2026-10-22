@@ -1,0 +1,42 @@
+Built 36 groundwater observations, 6 claims, 33 scenario rows. No facility water records.
+SQL view: [('Baseline', 2200000.0), ('Alternative', 1500000.0)]
+Groundwater rows: 36
+test_alternative_tradeoff (test_model.AccountingTests.test_alternative_tradeoff) ... ok
+test_break_even (test_model.AccountingTests.test_break_even) ... ok
+test_capacity (test_model.AccountingTests.test_capacity) ... ok
+test_indirect_double_count_rejected (test_model.AccountingTests.test_indirect_double_count_rejected) ... ok
+test_known_accounting (test_model.AccountingTests.test_known_accounting) ... ok
+test_missing_negative_nonfinite_rejected (test_model.AccountingTests.test_missing_negative_nonfinite_rejected) ... ok
+test_negative_savings_allowed (test_model.AccountingTests.test_negative_savings_allowed) ... ok
+test_no_change_projection (test_model.AccountingTests.test_no_change_projection) ... ok
+test_projection (test_model.AccountingTests.test_projection) ... ok
+test_projection_bounds (test_model.AccountingTests.test_projection_bounds) ... ok
+test_pue_below_one_rejected (test_model.AccountingTests.test_pue_below_one_rejected) ... ok
+test_withdrawal_rejected (test_model.AccountingTests.test_withdrawal_rejected) ... ok
+test_workload_mismatch (test_model.AccountingTests.test_workload_mismatch) ... ok
+test_wrong_energy_denominator_rejected (test_model.AccountingTests.test_wrong_energy_denominator_rejected) ... ok
+test_zero_baseline_pct_is_null (test_model.AccountingTests.test_zero_baseline_pct_is_null) ... ok
+test_zero_is_valid (test_model.AccountingTests.test_zero_is_valid) ... ok
+test_claim_lineage (test_model.EvidenceTests.test_claim_lineage) ... ok
+test_india_grain_and_completeness (test_model.EvidenceTests.test_india_grain_and_completeness) ... ok
+test_stage_not_recomputed_from_rounded_volumes (test_model.EvidenceTests.test_stage_not_recomputed_from_rounded_volumes) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.002s
+
+OK
+✔ accounting dimensions (1.132216ms)
+✔ semantic guards (0.312421ms)
+✔ tradeoff and break-even (0.380944ms)
+✔ zero baseline and equal workload (0.20578ms)
+✔ conditional futures (0.209877ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 102.519431
+Integration passed: SQLite integrity + semantic guard; SQL/Python parity; 30 Python/JS parity cases; evidence coverage.
+Rebuild complete. Start the app: python -m http.server 8000 --directory dist

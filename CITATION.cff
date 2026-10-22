@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this independent analytical project and its underlying sources."
+title: "ThirstyAI: Where AI Meets Water Stress"
+version: 0.1.0
+date-released: 2026-10-22
+authors:
+  - family-names: Mooper
+    given-names: Purushotman
+license: MIT
+repository-code: "https://github.com/purushotmanmooper96-bit/thirstyai"

@@ -1,0 +1,56 @@
+[
+  {
+    "source_id": "IEA26",
+    "url": "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary",
+    "retrieved_at": "2026-10-22T08:38:56.215329+00:00",
+    "sha256": "7d40a4f1f89459416bcca5869949deddd6b1d444a416acb539fc81d21de28f70",
+    "bytes": 375277,
+    "status": "fetched_anchor_checked",
+    "review_note": "Anchor checks detect drift; human locator review remains required"
+  },
+  {
+    "source_id": "CGWB25",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2206073&lang=1&reg=3",
+    "retrieved_at": "2026-10-22T08:39:03.622943+00:00",
+    "sha256": "cc4b979830f80189587ba10eeab84f6cfe6d067f34a5e008b595f7ca3e1da536",
+    "bytes": 1409330,
+    "status": "fetched_anchor_checked",
+    "review_note": "Anchor checks detect drift; human locator review remains required"
+  },
+  {
+    "source_id": "GOOGLE25",
+    "url": "https://arxiv.org/html/2508.15734v1",
+    "retrieved_at": "2026-10-22T08:39:16.120797+00:00",
+    "sha256": "ad4404f20f0277e59aba0702ef43a105dad6ba20b7b9565be0216a07be2a4aff",
+    "bytes": 170818,
+    "status": "fetched_anchor_checked",
+    "review_note": "Anchor checks detect drift; human locator review remains required"
+  },
+  {
+    "source_id": "WRI23",
+    "url": "https://www.wri.org/research/aqueduct-40-updated-decision-relevant-global-water-risk-indicators",
+    "retrieved_at": "2026-10-22T08:39:21.015847+00:00",
+    "sha256": "356d421af3054c2099b656d26dae39a8202ee6a059a3a2f5d12da87e76ca9a3f",
+    "bytes": 83723,
+    "status": "fetched_anchor_checked",
+    "review_note": "Anchor checks detect drift; human locator review remains required"
+  },
+  {
+    "source_id": "MS24",
+    "url": "https://www.microsoft.com/en-us/microsoft-cloud/blog/2024/12/09/sustainable-by-design-next-generation-datacenters-consume-zero-water-for-cooling/",
+    "retrieved_at": "2026-10-22T08:39:26.044765+00:00",
+    "sha256": "9b7245b86544c4b97bdecc6ec1e5dd33981c859461a5fdc246bbf74ceb384e89",
+    "bytes": 279040,
+    "status": "fetched_anchor_checked",
+    "review_note": "Anchor checks detect drift; human locator review remains required"
+  },
+  {
+    "source_id": "LBNL26",
+    "url": "https://bies.lbl.gov/publications/united-states-data-center-energy-2025",
+    "retrieved_at": "2026-10-22T08:39:30.247642+00:00",
+    "sha256": "5c630ebb61d16297a7ad6dfb37a57084e57202eb7e19b133d94a5197418b6e28",
+    "bytes": 25605,
+    "status": "fetched_anchor_checked",
+    "review_note": "Anchor checks detect drift; human locator review remains required"
+  }
+]

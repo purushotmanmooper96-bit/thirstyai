@@ -1,0 +1,9 @@
+data/raw/
+.venv/
+__pycache__/
+*.pyc
+.env
+node_modules/
+*.sqlite
+.pytest_cache/
+.openai/*.local.*

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "IEA26",
+    "title": "Key Questions on Energy and AI (2026)",
+    "publisher": "International Energy Agency",
+    "url": "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary",
+    "locator": "Executive summary: updated data centre electricity demand outlook",
+    "scope": "All data centres; global electricity",
+    "licence": "CC BY 4.0 stated by publisher",
+    "anchor": "950"
+  },
+  {
+    "id": "CGWB25",
+    "title": "Findings of Dynamic Groundwater Resources Assessment",
+    "publisher": "Ministry of Jal Shakti / PIB",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2206073&lang=1&reg=3",
+    "locator": "Annexure I: State-wise ground water resources of India, 2025",
+    "scope": "India state/UT annual groundwater; all uses",
+    "licence": "Source facts attributed; no blanket licence asserted; raw document excluded",
+    "anchor": "156.36"
+  },
+  {
+    "id": "GOOGLE25",
+    "title": "Measuring the environmental impact of delivering AI at Google Scale",
+    "publisher": "Elsworth et al. / Google",
+    "url": "https://arxiv.org/html/2508.15734v1",
+    "locator": "Section 3.3 and Table 2; May 2025",
+    "scope": "Median Gemini Apps text prompt; direct consumptive cooling water",
+    "licence": "CC BY 4.0 on article",
+    "anchor": "0.26"
+  },
+  {
+    "id": "WRI23",
+    "title": "Aqueduct 4.0 technical note",
+    "publisher": "World Resources Institute",
+    "url": "https://www.wri.org/research/aqueduct-40-updated-decision-relevant-global-water-risk-indicators",
+    "locator": "Technical note: screening limits and future periods",
+    "scope": "Modeled water context, not local facility impact",
+    "licence": "Creative Commons stated; dataset-specific terms need review before ingestion",
+    "anchor": "prioritization"
+  },
+  {
+    "id": "MS24",
+    "title": "Next-generation datacenters consume zero water for cooling",
+    "publisher": "Microsoft",
+    "url": "https://www.microsoft.com/en-us/microsoft-cloud/blog/2024/12/09/sustainable-by-design-next-generation-datacenters-consume-zero-water-for-cooling/",
+    "locator": "Mitigating energy impacts; footnote FY2024 withdrawal WUE",
+    "scope": "Company design disclosure; not fleet conversion evidence",
+    "licence": "Publisher copyright; raw article excluded",
+    "anchor": "withdrawal"
+  },
+  {
+    "id": "LBNL26",
+    "title": "United States Data Center Energy Usage Report: 2025 Update",
+    "publisher": "Lawrence Berkeley National Laboratory",
+    "url": "https://bies.lbl.gov/publications/united-states-data-center-energy-2025",
+    "locator": "Publication abstract; June 2026; Reference Case",
+    "scope": "All US data centres; electricity scenarios",
+    "licence": "Metadata/facts attributed; full report terms need review",
+    "anchor": "649"
+  }
+]

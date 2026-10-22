@@ -1,0 +1,18 @@
+-- Rename imported scenario table to Scenarios and groundwater table to Groundwater.
+-- Card: one year and one trajectory required, otherwise blank.
+Scenario Water L =
+IF (
+    HASONEVALUE ( Scenarios[year] ) && HASONEVALUE ( Scenarios[name] ),
+    SUM ( Scenarios[total_l] ),
+    BLANK ()
+)
+
+-- Line chart: axis = year, legend = name. Each point is a single slice.
+Scenario Water ML = DIVIDE ( [Scenario Water L], 1000000 )
+
+Reported Stage Pct = SELECTEDVALUE ( Groundwater[stage_pct] )
+
+State UT Records = DISTINCTCOUNT ( Groundwater[state] )
+
+-- stage_pct contains percent points, so use numeric 0.00 followed by a literal %.
+-- Do not apply percentage formatting that multiplies it by 100 again.
