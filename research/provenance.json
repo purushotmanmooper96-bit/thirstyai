@@ -52,5 +52,128 @@
     "bytes": 25605,
     "status": "fetched_anchor_checked",
     "review_note": "Anchor checks detect drift; human locator review remains required"
+  },
+  {
+    "source_id": "GOOGLE26",
+    "url": "https://sustainability.google/files/google-2026-environmental-report.pdf",
+    "resolved_url": "https://sustainability.google/files/google-2026-environmental-report.pdf",
+    "retrieved_at": "2026-10-22T09:23:22.018258+00:00",
+    "sha256": "1ed48de75e39955734a50c63599ca6c5f5a9bdf21465425b3ea85fde7f54320c",
+    "bytes": 18041620,
+    "status": "fetched_anchor_checked",
+    "review_note": "Downloaded PDF; reviewed named pages/table against extracted text and visual table where needed; no independent remeasurement."
+  },
+  {
+    "source_id": "MS26DATA",
+    "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/2026-Microsoft-Environmental-Data-Fact-Sheet-PDF.pdf",
+    "resolved_url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/2026-Microsoft-Environmental-Data-Fact-Sheet-PDF.pdf",
+    "retrieved_at": "2026-10-22T09:23:27.550938+00:00",
+    "sha256": "0fd180837df00b3427c3eae484a492224b8f18c381e82a2aed98b04553a197f6",
+    "bytes": 3912081,
+    "status": "fetched_anchor_checked",
+    "review_note": "Downloaded PDF; reviewed named pages/table against extracted text and visual table where needed; no independent remeasurement."
+  },
+  {
+    "source_id": "MS26REPORT",
+    "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/2026-Microsoft-Environmental-Sustainability-Report-PDF.pdf",
+    "resolved_url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/2026-Microsoft-Environmental-Sustainability-Report-PDF.pdf",
+    "retrieved_at": "2026-10-22T09:23:33.685904+00:00",
+    "sha256": "20918e9fc4a02241f55d12f1f5b6228a832b706499f9963a1a3f91e3d3e693ba",
+    "bytes": 14225069,
+    "status": "fetched_anchor_checked",
+    "review_note": "Downloaded PDF; reviewed named pages/table against extracted text and visual table where needed; no independent remeasurement."
+  },
+  {
+    "source_id": "META25",
+    "url": "https://sustainability.atmeta.com/asset/2025-environmental-data-index/",
+    "resolved_url": "https://sustainability.atmeta.com/wp-content/uploads/2025/10/Meta_2025-Environmental-Data-Index.pdf",
+    "retrieved_at": "2026-10-22T09:23:42.944827+00:00",
+    "sha256": "d7527cd23308869105b404b486117603bb3f5ee10e30499367f8698110afb66d",
+    "bytes": 2266742,
+    "status": "fetched_anchor_checked",
+    "review_note": "Downloaded PDF; reviewed named pages/table against extracted text and visual table where needed; no independent remeasurement."
+  },
+  {
+    "source_id": "META25REPORT",
+    "url": "https://sustainability.atmeta.com/asset/2025-sustainability-report/",
+    "resolved_url": "https://sustainability.atmeta.com/wp-content/uploads/2025/08/Meta_2025-Sustainability-Report_.pdf",
+    "retrieved_at": "2026-10-22T09:23:52.599829+00:00",
+    "sha256": "b44a27d7c12636d45b698269cac0300dfb53e9519c636e978386a48cdb110483",
+    "bytes": 28462709,
+    "status": "fetched_anchor_checked",
+    "review_note": "Downloaded PDF; reviewed named pages/table against extracted text and visual table where needed; no independent remeasurement."
+  },
+  {
+    "source_id": "META25ASSURANCE",
+    "url": "https://sustainability.atmeta.com/asset/2025-independent-accountants-review-report/",
+    "resolved_url": "https://sustainability.atmeta.com/wp-content/uploads/2025/09/Meta-EY_FY24-Independent-Accountants-Review-Report-and-Appendix.pdf",
+    "retrieved_at": "2026-10-22T09:24:01.829009+00:00",
+    "sha256": "0bdd15186f7401891c7b0c59314657144f5a34d2ea8a1a9fa4c09183602e5d24",
+    "bytes": 407496,
+    "status": "fetched_anchor_checked",
+    "review_note": "Downloaded PDF; reviewed named pages/table against extracted text and visual table where needed; no independent remeasurement."
+  },
+  {
+    "source_id": "WRIADMIN",
+    "url": "https://files.wri.org/aqueduct/aqueduct-4-0-country-rankings.zip",
+    "retrieved_at": "2026-10-22T09:30:46.271172+00:00",
+    "sha256": "97d50c4b5ba144523f90a06b95369431d54e0f846b9296b11880ed4d4dbc4ba5",
+    "bytes": 12790153,
+    "status": "fetched_anchor_checked",
+    "review_note": "Human reviewed locator; extracted facts, no independent remeasurement"
+  },
+  {
+    "source_id": "WRILICENCE",
+    "url": "https://raw.githubusercontent.com/wri/Aqueduct40/master/README.md",
+    "retrieved_at": "2026-10-22T09:30:50.250354+00:00",
+    "sha256": "ff6b3561a090a44e3ee1ec32c927e138f035cad96a0807e5ab6e4bde814a97a8",
+    "bytes": 1384,
+    "status": "fetched_anchor_checked",
+    "review_note": "Human reviewed locator; extracted facts, no independent remeasurement"
+  },
+  {
+    "source_id": "WRIINDIA26",
+    "url": "https://wri-india.org/data/more-half-indias-data-centres-are-water-stressed-regions",
+    "retrieved_at": "2026-10-22T09:30:55.296001+00:00",
+    "sha256": "d0225c16a9aaabb2e0b6a45d9887d3e379a219ba2531f20170edd21bb068ccc1",
+    "bytes": 110200,
+    "status": "fetched_anchor_checked",
+    "review_note": "Human reviewed locator; extracted facts, no independent remeasurement"
+  },
+  {
+    "source_id": "NREL12",
+    "url": "https://research-hub.nlr.gov/en/publications/operational-water-consumption-and-withdrawal-factors-for-electric-4/",
+    "retrieved_at": "2026-10-22T09:36:03.322202+00:00",
+    "sha256": "2a30a6630f7201850d0e7eaac66149420f9e042e212ee0d5bd2c78e8a4625e27",
+    "bytes": 51832,
+    "status": "fetched_anchor_checked",
+    "review_note": "Opened source and reviewed stated locator; no numeric headline extracted"
+  },
+  {
+    "source_id": "TSMC26",
+    "url": "https://esg.tsmc.com/en-US/articles/414",
+    "retrieved_at": "2026-10-22T09:36:09.788487+00:00",
+    "sha256": "ea8cf73f95ff602a90a327001a43f6aac6326c77723c3cd7e14f081676465dd6",
+    "bytes": 229520,
+    "status": "fetched_anchor_checked",
+    "review_note": "Opened source and reviewed stated locator; no numeric headline extracted"
+  },
+  {
+    "source_id": "TSMCWATER26",
+    "url": "https://esg.tsmc.com.tw/en-US/articles/413",
+    "retrieved_at": "2026-10-22T09:36:16.198063+00:00",
+    "sha256": "0d49f8c4eb98b496f331308868f412499c60ef4ef40c532bb522d85d80eaca13",
+    "bytes": 227247,
+    "status": "fetched_anchor_checked",
+    "review_note": "Opened source and reviewed stated locator; no numeric headline extracted"
+  },
+  {
+    "source_id": "METAVWB24",
+    "url": "https://sustainability.atmeta.com/asset/2024-volumetric-water-benefits/",
+    "retrieved_at": "2026-10-22T09:36:26.451171+00:00",
+    "sha256": "d127c022ff3e54380000cf5d27d9d6480b982d831ced65b99bac14fd39532116",
+    "bytes": 2912600,
+    "status": "fetched_anchor_checked",
+    "review_note": "Opened source and reviewed stated locator; no numeric headline extracted"
   }
 ]

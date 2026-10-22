@@ -1,0 +1,4 @@
+region,country,indicator,weight,score,label,period,source_id,locator,licence
+Arizona,USA,bws,Tot,4.392122413,Extremely High (>80%),1979-2019 baseline,WRIADMIN,"province_baseline row 2284; name_1=Arizona, indicator_name=bws, weight=Tot",CC BY 4.0
+New Mexico,USA,bws,Tot,4.324930145,Extremely High (>80%),1979-2019 baseline,WRIADMIN,"province_baseline row 2437; name_1=New Mexico, indicator_name=bws, weight=Tot",CC BY 4.0
+Nevada,USA,bws,Tot,3.569639288,High (40-80%),1979-2019 baseline,WRIADMIN,"province_baseline row 6456; name_1=Nevada, indicator_name=bws, weight=Tot",CC BY 4.0

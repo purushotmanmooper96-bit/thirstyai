@@ -34,3 +34,21 @@ CREATE OR REPLACE VIEW vw_scenarios AS
  it_mwh*1000*pue*carbon_kg_kwh AS carbon_kg
  FROM scenario_inputs;
 CREATE INDEX IF NOT EXISTS idx_groundwater_year_stage ON groundwater(year,stage_pct);
+
+CREATE TABLE IF NOT EXISTS company_water_reports (
+ observation_id TEXT PRIMARY KEY, company TEXT NOT NULL, metric TEXT NOT NULL,
+ value DOUBLE PRECISION CHECK(value >= 0), unit TEXT NOT NULL, period TEXT NOT NULL,
+ geography TEXT NOT NULL, scope TEXT NOT NULL, water_metric TEXT NOT NULL,
+ energy_denominator TEXT NOT NULL, evidence_type TEXT NOT NULL,
+ source_id TEXT NOT NULL REFERENCES sources(source_id), locator TEXT NOT NULL,
+ confidence TEXT NOT NULL CHECK(confidence IN ('High','Medium','Low')),
+ confidence_basis TEXT NOT NULL, assurance TEXT NOT NULL, caveat TEXT NOT NULL
+);
+CREATE OR REPLACE VIEW vw_company_reporting AS
+ SELECT c.*,s.url,
+ CASE WHEN EXISTS (
+ SELECT 1 FROM company_water_reports other WHERE other.metric=c.metric AND
+ (other.unit<>c.unit OR other.period<>c.period OR other.scope<>c.scope OR
+ other.water_metric<>c.water_metric OR other.energy_denominator<>c.energy_denominator))
+ THEN 'DEFINITIONS_PERIODS_OR_SCOPES_DIFFER' ELSE 'CHECK_FLEET_AND_ASSURANCE' END AS comparison_flag
+ FROM company_water_reports c JOIN sources s ON c.source_id=s.source_id;

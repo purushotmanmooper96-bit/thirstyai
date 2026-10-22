@@ -58,5 +58,152 @@
     "scope": "All US data centres; electricity scenarios",
     "licence": "Metadata/facts attributed; full report terms need review",
     "anchor": "649"
+  },
+  {
+    "id": "GOOGLE26",
+    "title": "Google 2026 Environmental Report",
+    "publisher": "Google",
+    "url": "https://sustainability.google/files/google-2026-environmental-report.pdf",
+    "locator": "PDF pp. 96-97; methodology pp. 84-85; PUE p.15",
+    "scope": "Company-reported environmental disclosure; not AI-only",
+    "licence": "Publisher copyright; attributed extracted facts only; raw document excluded",
+    "anchor": "PDF manual locator review",
+    "human_reviewed": true
+  },
+  {
+    "id": "MS26DATA",
+    "title": "Microsoft 2026 Environmental Data Fact Sheet",
+    "publisher": "Microsoft",
+    "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/2026-Microsoft-Environmental-Data-Fact-Sheet-PDF.pdf",
+    "locator": "Tables 8 and 15, PDF pp.7,25-26; inventory methods pp.18-19",
+    "scope": "Company-reported environmental disclosure; not AI-only",
+    "licence": "Publisher copyright; attributed extracted facts only; raw document excluded",
+    "anchor": "PDF manual locator review",
+    "human_reviewed": true
+  },
+  {
+    "id": "MS26REPORT",
+    "title": "Microsoft 2026 Environmental Sustainability Report",
+    "publisher": "Microsoft",
+    "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/2026-Microsoft-Environmental-Sustainability-Report-PDF.pdf",
+    "locator": "PDF pp.23-24; WUE definition endnote 12 p.64",
+    "scope": "Company-reported environmental disclosure; not AI-only",
+    "licence": "Publisher copyright; attributed extracted facts only; raw document excluded",
+    "anchor": "PDF manual locator review",
+    "human_reviewed": true
+  },
+  {
+    "id": "META25",
+    "title": "Meta 2025 Environmental Data Index",
+    "publisher": "Meta",
+    "url": "https://sustainability.atmeta.com/asset/2025-environmental-data-index/",
+    "locator": "FY2024; PDF pp.8-11,18; facility withdrawal p.9",
+    "scope": "Company-reported environmental disclosure; not AI-only",
+    "licence": "Publisher copyright; attributed extracted facts only; raw document excluded",
+    "anchor": "PDF manual locator review",
+    "human_reviewed": true
+  },
+  {
+    "id": "META25REPORT",
+    "title": "Meta 2025 Sustainability Report",
+    "publisher": "Meta",
+    "url": "https://sustainability.atmeta.com/asset/2025-sustainability-report/",
+    "locator": "2024 reporting; current publisher reporting page",
+    "scope": "Company-reported environmental disclosure; not AI-only",
+    "licence": "Publisher copyright; attributed extracted facts only; raw document excluded",
+    "anchor": "PDF manual locator review",
+    "human_reviewed": true
+  },
+  {
+    "id": "META25ASSURANCE",
+    "title": "Meta Independent Accountants Review linked from 2025 report",
+    "publisher": "Meta / Ernst & Young",
+    "url": "https://sustainability.atmeta.com/asset/2025-independent-accountants-review-report/",
+    "locator": "Selected metrics, water withdrawal and consumption; not a whole-report audit",
+    "scope": "Company-reported environmental disclosure; not AI-only",
+    "licence": "Publisher copyright; attributed extracted facts only; raw document excluded",
+    "anchor": "PDF manual locator review",
+    "human_reviewed": true
+  },
+  {
+    "id": "WRIADMIN",
+    "title": "Aqueduct 4.0 administrative rankings workbook",
+    "publisher": "World Resources Institute",
+    "url": "https://files.wri.org/aqueduct/aqueduct-4-0-country-rankings.zip",
+    "locator": "province_baseline sheet; indicator bws; weight Tot; 1979-2019 baseline",
+    "scope": "Demand-weighted state/province context, not facility measurement",
+    "licence": "CC BY 4.0, confirmed in wri/Aqueduct40 README",
+    "anchor": "",
+    "human_reviewed": true
+  },
+  {
+    "id": "WRILICENCE",
+    "title": "Aqueduct 4.0 public documentation and licence",
+    "publisher": "World Resources Institute",
+    "url": "https://raw.githubusercontent.com/wri/Aqueduct40/master/README.md",
+    "locator": "README licence paragraph",
+    "scope": "Dataset licence and documentation",
+    "licence": "CC BY 4.0",
+    "anchor": "CC BY 4.0",
+    "human_reviewed": true
+  },
+  {
+    "id": "WRIINDIA26",
+    "title": "More Than Half of India\u2019s Data Centres Are in Water-Stressed Regions",
+    "publisher": "WRI India",
+    "url": "https://wri-india.org/data/more-half-indias-data-centres-are-water-stressed-regions",
+    "locator": "18 May 2026, main text and linked infographic; underlying sources named",
+    "scope": "Published India data-centre distribution analysis; not independently recreated here",
+    "licence": "Attributed summary only; no third-party infographic copied",
+    "anchor": "278",
+    "human_reviewed": true
+  },
+  {
+    "id": "NREL12",
+    "title": "Operational water consumption and withdrawal factors for electricity generating technologies",
+    "publisher": "Macknick et al. / NREL",
+    "url": "https://research-hub.nlr.gov/en/publications/operational-water-consumption-and-withdrawal-factors-for-electric-4/",
+    "locator": "Abstract; DOI 10.1088/1748-9326/7/4/045802; 2012",
+    "scope": "US electricity technologies; literature synthesis, not a current global grid factor",
+    "licence": "Publisher copyright; links and attributed facts only; no raw document distributed",
+    "anchor": "",
+    "human_reviewed": true,
+    "review_note": "Opened source and reviewed stated locator; no numeric headline extracted"
+  },
+  {
+    "id": "TSMC26",
+    "title": "TSMC 2025 Sustainability Report now available",
+    "publisher": "TSMC",
+    "url": "https://esg.tsmc.com/en-US/articles/414",
+    "locator": "20 August 2026; Water Positive commitment section",
+    "scope": "Semiconductor manufacturing company disclosure, not AI-only allocation",
+    "licence": "Publisher copyright; links and attributed facts only; no raw document distributed",
+    "anchor": "",
+    "human_reviewed": true,
+    "review_note": "Opened source and reviewed stated locator; no numeric headline extracted"
+  },
+  {
+    "id": "TSMCWATER26",
+    "title": "Supplier wastewater governance",
+    "publisher": "TSMC",
+    "url": "https://esg.tsmc.com.tw/en-US/articles/413",
+    "locator": "7 July 2026; Identifying Risks via Three Key Indicators",
+    "scope": "Semiconductor supply-chain wastewater management; self-reported programme",
+    "licence": "Publisher copyright; links and attributed facts only; no raw document distributed",
+    "anchor": "",
+    "human_reviewed": true,
+    "review_note": "Opened source and reviewed stated locator; no numeric headline extracted"
+  },
+  {
+    "id": "METAVWB24",
+    "title": "2024 Volumetric Water Benefits",
+    "publisher": "Meta / LimnoTech",
+    "url": "https://sustainability.atmeta.com/asset/2024-volumetric-water-benefits/",
+    "locator": "August 2025; PDF pp.5,9,17,25; risk method, Prineville, Los Lunas, Mesa",
+    "scope": "Company-commissioned restoration and basin context, not a causal harm study",
+    "licence": "Publisher copyright; links and attributed facts only; no raw document distributed",
+    "anchor": "",
+    "human_reviewed": true,
+    "review_note": "Opened source and reviewed stated locator; no numeric headline extracted"
   }
 ]

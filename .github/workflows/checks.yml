@@ -15,3 +15,47 @@ jobs:
         with:
           node-version: '22'
       - run: python scripts/reproduce.py
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: thirstyai_db
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: ci-local-only
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready --health-interval 10s
+          --health-timeout 5s --health-retries 5
+    env:
+      PGHOST: localhost
+      PGPORT: '5432'
+      PGDATABASE: thirstyai_db
+      PGUSER: postgres
+      PGPASSWORD: ci-local-only
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install 'psycopg[binary]>=3.2,<4'
+      - run: python scripts/reproduce.py
+      - run: python scripts/verify_postgres.py --load
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python3 -m http.server 8765 --directory dist > /tmp/thirstyai-http.log 2>&1 &
+      - run: npx --yes lighthouse@12.8.2 http://localhost:8765/ --chrome-flags="--headless --no-sandbox" --output=json --output=html --output-path=./outputs/lighthouse-mobile --quiet
+      - run: npx --yes lighthouse@12.8.2 http://localhost:8765/ --preset=desktop --chrome-flags="--headless --no-sandbox" --output=json --output=html --output-path=./outputs/lighthouse-desktop --quiet
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: outputs/lighthouse-*

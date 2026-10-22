@@ -1,0 +1,23 @@
+[
+  {
+    "company": "Google",
+    "target": "Replenish 120% of freshwater consumed across offices and data centers by 2030",
+    "source_id": "GOOGLE26",
+    "locator": "PDF p.78 Water ambition",
+    "caveat": "Goal, not achieved local offset; freshwater boundary differs from all-water totals."
+  },
+  {
+    "company": "Microsoft",
+    "target": "Water positive by 2030; replenishment focus expanded to withdrawals",
+    "source_id": "MS26REPORT",
+    "locator": "PDF p.24 Water",
+    "caveat": "Target and company statement; local timing/additionality require separate evaluation."
+  },
+  {
+    "company": "Meta",
+    "target": "Water positive in 2030; restore 200% in high-stress and 100% in medium-stress regions",
+    "source_id": "META25REPORT",
+    "locator": "2025 report Goals; publisher landing page Water goals",
+    "caveat": "Goals, not independent local-impact measurements."
+  }
+]
