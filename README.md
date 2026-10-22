@@ -12,6 +12,10 @@ Explore published data-centre water disclosures and test how cooling choices shi
 
 Free to try. No account or API key. Calculations run in your browser.
 
+![ThirstyAI v0.2.1: guided evidence and cooling comparison entry points](outputs/website-v021.png)
+
+[Published v0.2.1](https://github.com/purushotmanmooper96-bit/thirstyai/releases/tag/v0.2.1) · [Verification results](docs/verification_v021.md)
+
 [Background, solutions and future outlook](docs/public_guide.md) · [Current validation](docs/validation_current.md)
 
 ## Try this first
