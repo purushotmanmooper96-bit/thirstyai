@@ -118,3 +118,5 @@ If you want to follow future evidence updates, star the repository.
 **Withdrawal:** water taken from a source. **Consumption:** water not returned within the stated boundary. **PUE:** facility electricity divided by IT electricity. **WUE:** water per energy unit; always check both definitions. **Groundwater extraction stage:** annual extraction relative to annual extractable resources, not stored water emptied.
 
 Built by **Purushotman Mooper** as independent portfolio work. Cite [CITATION.cff](CITATION.cff) and the original sources for environmental claims. Code: [MIT](LICENSE). Data/documents: [source-specific terms](docs/data_licensing.md).
+
+[Original scope and remaining sign-off](docs/scope_completion.md) · [Power BI import pack](bi/IMPORT_WINDOWS.md) · [Native Desktop checks](docs/desktop_signoff.md)

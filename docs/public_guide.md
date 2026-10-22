@@ -43,7 +43,7 @@ These are different questions and boundaries, **not a company ranking**. High co
 
 ML means million litres. Google reports gallons; the source unit is retained. Reports describe limited external assurance for selected metrics; ThirstyAI has not independently audited or remeasured the company values. [Full comparison, WUE/PUE definitions and omissions](case_study_company_reporting.md).
 
-We do not manufacture a common uncertainty range from unlike reports. There is **no verified global AI water total here**. The Google serving study's prompt allocation is documented in the claim register, with its narrow boundary; it is never generalized to all AI.
+We do not manufacture a common uncertainty range from unlike reports. There is **no verified global AI water total here**. A [published global scenario candidate](global_water_estimates.md) is documented separately with its boundary and pending human review; it is not a current measurement. The Google serving study's prompt allocation is documented in the claim register, with its narrow boundary; it is never generalized to all AI.
 
 ## Where we do and do not know
 
@@ -114,7 +114,7 @@ python3 -m http.server 8000 --directory dist
 
 Open http://localhost:8000. Stop with Ctrl+C. Use HTTP rather than double-clicking the HTML file. The offline rebuild uses attributed processed snapshots, rebuilds SQL/browser exports, and checks semantic constraints and Python/JavaScript/SQLite parity. It does not re-fetch sources or validate desktop applications.
 
-[PostgreSQL / pgAdmin steps](verify_postgres_windows.md) · [Power BI click-by-click build](../bi/BUILD_WINDOWS.md) · [Excel validation cases](excel_validation.md) · [Current validation record](validation_v02.md).
+[PostgreSQL / pgAdmin steps](verify_postgres_windows.md) · [Power BI click-by-click build](../bi/BUILD_WINDOWS.md) · [Excel validation cases](excel_validation.md) · [Current validation record](validation_current.md).
 
 For a deliberate source refresh: `python scripts/ingest.py --refresh`, review changed source locators and definitions, then rebuild. Raw downloads stay outside Git. A changed manually reviewed document must not silently inherit approval. See [methodology](methodology.md), [licensing](data_licensing.md) and the [ten-topic evidence status](evidence_status.md).
 
@@ -129,6 +129,6 @@ For a deliberate source refresh: `python scripts/ingest.py --refresh`, review ch
 
 ## Cite
 
-Purushotman Mooper. *ThirstyAI: evidence atlas and decision lab*, v0.2. See [CITATION.cff](../CITATION.cff). Cite original sources for environmental claims and retain their boundary, period and caveat. Independent portfolio work; no endorsement by source organisations or the author's former employer is implied.
+Purushotman Mooper. *ThirstyAI: evidence atlas and decision lab*, v0.2.1. See [CITATION.cff](../CITATION.cff). Cite original sources for environmental claims and retain their boundary, period and caveat. Independent portfolio work; no endorsement by source organisations or the author's former employer is implied.
 
 Original code: [MIT](../LICENSE). Third-party data and documents retain their own terms. [Contribute a correction](../CONTRIBUTING.md) · [Release notes](CHANGELOG.md).

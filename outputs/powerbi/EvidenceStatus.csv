@@ -1,0 +1,11 @@
+topic,level,source_locator,caveat,missing
+Direct cooling water,Strong for published company totals,"GOOGLE26 pp.96–97; META25 pp.9,11",Operational water totals are not necessarily cooling alone or AI alone,Comparable monthly cooling-only consumption across operators
+Electricity-related water,Partial,"NREL12 abstract, DOI 10.1088/1748-9326/7/4/045802",US literature synthesis from 2012; technologies and cooling systems differ,"Current local grid consumption factors, time and supply boundaries"
+Chip manufacturing water,Partial,TSMC26 Water Positive section,Manufacturer commitment; no workload allocation,AI chip lifecycle inventory and allocation method
+Siting in stressed regions,Partial,"WRIADMIN province_baseline, bws/Tot; WRIINDIA26 main text","Our join is a state proxy, not a basin match; India analysis is attributed, not recreated","Verified supply basins, coordinates, permits and seasonal context"
+Heat-wave / drought peaks,Partial,"METAVWB24 pp.9,25",City seasonal demand and basin drought context are not data-centre peak measurements,Monthly / peak facility demand during heat waves and droughts
+Competition with local users,Partial,"METAVWB24 pp.17,25",Shared basin and restoration context do not prove displacement or causation,"Independent local water balances, rights and household/agricultural effects"
+Water quality and discharge,Partial,TSMCWATER26 “Identifying Risks via Three Key Indicators”,"Supplier programme reporting, not independently sampled effluent","Facility discharge temperature, pollutants, permit and monitoring results"
+Reporting transparency,Strong for definition differences,"MS26DATA Tables 8,15; META25 p.18; GOOGLE26 pp.87–88","Years, fleets, definitions and assurance differ",Common annual + seasonal disclosure standard
+Growth of AI demand,Partial,IEA26 executive summary; LBNL26 abstract,"All data centres, not AI-only; projections conditional",Realised future demand and consistent AI share
+Energy–water–carbon trade-offs,Partial,NREL12 abstract; MS24 “Mitigating energy impacts”,Technology-specific; lower direct cooling water can increase energy,"Site-specific performance, cost and marginal grid impacts"

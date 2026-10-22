@@ -1,0 +1,28 @@
+{
+  "source_id": "LI25CANDIDATE",
+  "url": "https://arxiv.org/html/2304.03271v5",
+  "retrieved_at": "2026-10-22T13:47:45.344532+00:00",
+  "sha256": "b57ba405cb9945e9c680999d6f72dfb8165db080d7704810820a7d3a1e7332d3",
+  "bytes": 154791,
+  "status": "opened_and_assistant_reviewed_human_review_pending",
+  "locator": "Abstract; Section 1 paragraphs beginning AI represents and Even considering; footnote on location-based scope-2; Sections 2.1\u20132.2",
+  "scope": "Global AI operational scope-1 plus location-based scope-2 water withdrawal, 2027 modeled scenario; excludes manufacturing",
+  "licence": "arXiv perpetual non-exclusive licence; links and attributed extracted facts only; raw HTML excluded from Git",
+  "human_reviewed": false,
+  "reviewer": "AI assistant; not an independent human reviewer",
+  "headline_eligible": false,
+  "facts": [
+    {
+      "value_low": 4.2,
+      "value_high": 6.6,
+      "unit": "billion cubic metres/year",
+      "year": 2027,
+      "geography": "Global",
+      "water_metric": "withdrawal",
+      "evidence_type": "published_projection",
+      "confidence": "Low",
+      "confidence_basis": "Scenario applicability is uncertain; range is not a statistical confidence interval",
+      "caveat": "Assumed AI demand and water intensity; not observed consumption, not a contemporary inventory, not a 2030\u20132035 forecast"
+    }
+  ]
+}

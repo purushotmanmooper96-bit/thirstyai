@@ -4,6 +4,8 @@ This is a reproducible build specification, **not a delivered or validated PBIX*
 
 ## 1. Prepare and connect
 
+Recommended CSV route: use [IMPORT_WINDOWS.md](IMPORT_WINDOWS.md) to import all seven prepared tables with explicit types, null handling and manifest row counts, then continue at section 2 below. The manual connections below remain an alternative; do not import duplicate copies. The generated M query has not been executed in Desktop here.
+
 1. In PowerShell at repo root, run `python scripts/reproduce.py`. For PostgreSQL, complete [database verification](../docs/verify_postgres_windows.md) first.
 2. Open **Power BI Desktop → Blank report**. **File → Options and settings → Options → Current File → Regional Settings → English (United States)** for dot-decimal CSV parsing. Click **OK**.
 3. **Home → Get data → Text/CSV → Browse**. Select `data/processed/india_groundwater_2025.csv`; encoding **65001 UTF-8**, delimiter comma. Click **Transform Data**. Rename query **Groundwater**.
