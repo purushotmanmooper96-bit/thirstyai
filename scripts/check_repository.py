@@ -20,7 +20,7 @@ def main():
    if target.startswith(('http:','https:','mailto:','#','<')):continue
    relative=unquote(target.split('#')[0])
    if relative and not (path.parent/relative).exists():raise ValueError(f'Broken local link in {path.relative_to(ROOT)}: {target}')
- for filename in ('dist/app.mjs','dist/model.mjs','scripts/build_workbook.mjs'):
+ for filename in ('dist/app.mjs','dist/model.mjs','dist/navigation.mjs','scripts/build_workbook.mjs'):
   subprocess.run(['node','--check',filename],cwd=ROOT,check=True,timeout=15)
  for path in (ROOT/'notebooks').glob('*.ipynb'):
   notebook=json.loads(path.read_text(encoding='utf-8'));namespace={'__name__':'__main__'}

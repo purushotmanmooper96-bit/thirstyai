@@ -4,7 +4,7 @@ Company disclosures now provide real water observations. They do **not** establi
 
 | Operator and reporting period | What is published | Why comparisons need care |
 |---|---|---|
-| Google, calendar 2025 | Global withdrawal 14,689 and consumption 10,869 million gallons; owned/operated data-centre withdrawal 13,562 and consumption 10,523 million gallons. PUE 1.09. | Corporate and data-centre boundaries differ. Source uses gallons, while the other two use ML. No compatible fleet WUE value was extracted from this annual report. |
+| Google, calendar 2025 | Global withdrawal 14,689 and consumption 10,869 million gallons; owned and fully leased data-centre withdrawal 13,562 and consumption 10,523 million gallons. PUE 1.09. | Corporate and data-centre boundaries differ. Source uses gallons, while the other two use ML. No compatible fleet WUE value was extracted from this annual report. |
 | Microsoft, FY25 ending 30 June 2025 | Enterprise withdrawal 13,266 ML and consumption 8,170 ML. Global-average PUE 1.17. Owned-datacentre WUE 0.27 L/kWh. | Enterprise totals include owned/leased offices, datacentres and labs. Inspected WUE endnote does not explicitly resolve consumption vs withdrawal and energy denominator, so it is barred from the consumptive model. |
 | Meta, calendar 2024 in its current 2025 report/index | Operational withdrawal 5,637 ML and consumption 3,123 ML; data-centre withdrawal 4,145 ML and consumption 2,974 ML. PUE 1.08. | Different year. Construction water is reported separately and excluded from the operational withdrawal total. WUE methodology is withdrawal per IT kWh; a numeric fleet WUE was not located in the inspected report/index. |
 

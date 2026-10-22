@@ -1,0 +1,20 @@
+{
+  "url": "https://sustainability.google/files/google-2026-environmental-report.pdf",
+  "retrieved_at": "2026-10-22T12:02:33.777399+00:00",
+  "sha256": "1ed48de75e39955734a50c63599ca6c5f5a9bdf21465425b3ea85fde7f54320c",
+  "bytes": 18041620,
+  "issue": 1,
+  "observation_id": "CORP04",
+  "source_id": "GOOGLE26",
+  "value": 10523,
+  "unit": "million gallons (as reported)",
+  "period": "2025-01-01/2025-12-31",
+  "geography": "Global Google operational data-center fleet",
+  "water_metric": "consumption",
+  "scope": "Owned and fully leased data centers; excludes seawater and brackish water",
+  "locator": "PDF/printed p.96 Water use by data centers and offices, Data centers row / Water consumption column; methodology pp.87\u201388",
+  "confidence": "High for extraction, not independent measurement",
+  "review_method": "Assistant reviewed extracted PDF text and rendered page 96; original bytes match existing GOOGLE26 hash",
+  "assurance": "The selected 2025 consumption cell bears the p.96 limited-assurance check mark; no full assurance re-audit is claimed",
+  "correction": "Value unchanged. Fleet boundary and methodology locator made explicit."
+}

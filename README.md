@@ -4,7 +4,7 @@
 
 **AI has a water footprint. The useful question is: where, when, and which water?**
 
-[Open the evidence atlas](https://purushotmanmooper96-bit.github.io/thirstyai/) · [Company case study](docs/case_study_company_reporting.md) · [Evidence gaps](docs/evidence_status.md) · [Audit](docs/audit.md)
+[Open the evidence atlas](https://purushotmanmooper96-bit.github.io/thirstyai/) · [Company case study](docs/case_study_company_reporting.md) · [Evidence gaps](docs/evidence_status.md) · [தமிழ் அறிமுகம்](docs/translations/README.ta.md) · [Audit](docs/audit.md)
 
 [![Reproducibility](https://github.com/purushotmanmooper96-bit/thirstyai/actions/workflows/checks.yml/badge.svg)](https://github.com/purushotmanmooper96-bit/thirstyai/actions/workflows/checks.yml)
 [![MIT code licence](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
@@ -37,7 +37,7 @@ These are different questions and boundaries, **not a company ranking**. High co
 | Finding | Year / geography | Boundary and type | Source / exact locator | Confidence |
 |---|---|---|---|---|
 | **485 TWh/year** estimated; **950 TWh/year** projected | 2025 / 2030, global | Electricity for all data centres, not AI alone; estimate / conditional projection | [IEA 2026 executive summary, demand outlook](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary), C01–C02 | High / Medium |
-| **10,523 million gallons** | 2025, Google global owned/operated data centres | Company-reported direct water consumption, not withdrawal or AI-only water | [Google 2026 report p.96, Water](https://sustainability.google/files/google-2026-environmental-report.pdf), CORP04 | High |
+| **10,523 million gallons** | 2025, Google global owned and fully leased data centres | Company-reported consumption; excludes seawater/brackish water, may include estimates; not AI-only | [Google 2026 report p.96, Water](https://sustainability.google/files/google-2026-environmental-report.pdf), CORP04 | High |
 | **8,170 ML** | FY25 ending June 2025, Microsoft global enterprise | Company-reported consumption across offices, labs and data centres; not a DC-only total | [Microsoft 2026 fact sheet p.7, Table 8](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/2026-Microsoft-Environmental-Data-Fact-Sheet-PDF.pdf), CORP08 | High |
 | **2,974 ML** | 2024, Meta global data centres | Company-reported operational water consumption, not AI-only | [Meta 2025 index p.11](https://sustainability.atmeta.com/asset/2025-environmental-data-index/), CORP14 | High |
 
